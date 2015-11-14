@@ -41,7 +41,7 @@
                                     <constraint firstAttribute="height" constant="49" id="qWI-XY-erC"/>
                                 </constraints>
                                 <items>
-                                    <tabBarItem title="二维码" image="qrcode_tabbar_icon_qrcode" id="uDA-Yw-mZ1"/>
+                                    <tabBarItem tag="1" title="二维码" image="qrcode_tabbar_icon_qrcode" id="uDA-Yw-mZ1"/>
                                     <tabBarItem title="条形码" image="qrcode_tabbar_icon_barcode" id="mqX-qt-ZdT"/>
                                 </items>
                                 <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -56,7 +56,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.67450980390000004" green="0.67450980390000004" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="0gw-Dj-nCX"/>
                                     <constraint firstItem="oN6-HC-9Su" firstAttribute="leading" secondItem="RQo-1X-SZS" secondAttribute="leading" id="1tY-NV-1T3"/>
@@ -89,7 +89,10 @@
                         <barButtonItem key="rightBarButtonItem" title="相册" id="nWh-kv-At2"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="containerHeightCons" destination="0gw-Dj-nCX" id="RWb-Ef-m4w"/>
                         <outlet property="customTabBar" destination="EO3-sP-Go9" id="AeA-b1-WzZ"/>
+                        <outlet property="scanLineCons" destination="fqM-Gq-w7T" id="yY6-Dh-tyd"/>
+                        <outlet property="scanLineView" destination="J3G-Bt-zcB" id="9HX-aH-1lI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0xQ-vh-UqR" userLabel="First Responder" sceneMemberID="firstResponder"/>
