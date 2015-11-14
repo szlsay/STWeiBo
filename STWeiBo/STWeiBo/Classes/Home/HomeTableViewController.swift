@@ -7,7 +7,7 @@
 //
 import UIKit
 
-class HomeTableViewController: BaseTableViewController {
+class HomeTableViewController: BaseTableViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,21 @@ class HomeTableViewController: BaseTableViewController {
     
     func titleBtnClick(btn: TitleButton)
     {
+        // 1.修改箭头方向
         btn.selected = !btn.selected
+        
+        // 2.弹出菜单
+        let sb = UIStoryboard(name: "PopoverViewController", bundle: nil)
+        let vc = sb.instantiateInitialViewController()
+        // 2.1设置转场代理
+        // 默认情况下modal会移除以前控制器的view, 替换为当前弹出的view
+        // 如果自定义转场, 那么就不会移除以前控制器的view
+        vc?.transitioningDelegate = self
+        // 2.2设置转场的样式
+        vc?.modalPresentationStyle = UIModalPresentationStyle.Custom
+        
+        presentViewController(vc!, animated: true, completion: nil)
+
     }
     
     func leftItemClick()
@@ -48,16 +62,14 @@ class HomeTableViewController: BaseTableViewController {
     {
         print(__FUNCTION__)
     }
-    
-    /*
-    private func creatBarButtonItem(imageName:String, target: AnyObject?, action:Selector) ->UIBarButtonItem
+}
+
+extension HomeTableViewController: UIViewControllerTransitioningDelegate
+{
+    // 实现代理方法, 告诉系统谁来负责转场动画
+    // UIPresentationController iOS8推出的专门用于负责转场动画的
+    func presentationControllerForPresentedViewController(presented: UIViewController, presentingViewController presenting: UIViewController, sourceViewController source: UIViewController) -> UIPresentationController?
     {
-    let btn = UIButton()
-    btn.setImage(UIImage(named: imageName), forState: UIControlState.Normal)
-    btn.setImage(UIImage(named: imageName + "_highlighted"), forState: UIControlState.Highlighted)
-    btn.addTarget(target, action: action, forControlEvents: UIControlEvents.TouchUpInside)
-    btn.sizeToFit()
-    return UIBarButtonItem(customView: btn)
+        return PopoverPresentationController(presentedViewController: presented, presentingViewController: presenting)
     }
-    */
 }
