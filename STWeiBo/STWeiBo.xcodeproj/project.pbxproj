@@ -26,6 +26,7 @@
 		77E071A91BF72701005BC40E /* PopoverPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E071A61BF72701005BC40E /* PopoverPresentationController.swift */; };
 		77E071AA1BF72701005BC40E /* PopoverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E071A71BF72701005BC40E /* PopoverViewController.storyboard */; };
 		77E071AB1BF72701005BC40E /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E071A81BF72701005BC40E /* PopoverViewController.swift */; };
+		77E071AD1BF72A9A005BC40E /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E071AC1BF72A9A005BC40E /* PopoverAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		77E071A61BF72701005BC40E /* PopoverPresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverPresentationController.swift; sourceTree = "<group>"; };
 		77E071A71BF72701005BC40E /* PopoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopoverViewController.storyboard; sourceTree = "<group>"; };
 		77E071A81BF72701005BC40E /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
+		77E071AC1BF72A9A005BC40E /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 		77E071A51BF72701005BC40E /* Popover */ = {
 			isa = PBXGroup;
 			children = (
+				77E071AC1BF72A9A005BC40E /* PopoverAnimator.swift */,
 				77E071A61BF72701005BC40E /* PopoverPresentationController.swift */,
 				77E071A71BF72701005BC40E /* PopoverViewController.storyboard */,
 				77E071A81BF72701005BC40E /* PopoverViewController.swift */,
@@ -385,6 +388,7 @@
 				77E071A21BF72243005BC40E /* UIBarButtonItem+Category.swift in Sources */,
 				77E071941BF6E8C6005BC40E /* MessageTableViewController.swift in Sources */,
 				77E0719C1BF6F114005BC40E /* UIView+AutoLayout.swift in Sources */,
+				77E071AD1BF72A9A005BC40E /* PopoverAnimator.swift in Sources */,
 				77E071A01BF6F16D005BC40E /* VisitorView.swift in Sources */,
 				77E071931BF6E8C6005BC40E /* MainViewController.swift in Sources */,
 				77E071A41BF72434005BC40E /* TitleButton.swift in Sources */,
