@@ -56,7 +56,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.67450980390000004" green="0.67450980390000004" blue="0.67450980390000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="0gw-Dj-nCX"/>
                                     <constraint firstItem="oN6-HC-9Su" firstAttribute="leading" secondItem="RQo-1X-SZS" secondAttribute="leading" id="1tY-NV-1T3"/>
@@ -70,14 +70,23 @@
                                     <constraint firstAttribute="width" constant="300" id="mnt-Dh-Mqs"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫描之后即可显示数据" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuH-Tn-zxg">
+                                <rect key="frame" x="215.5" y="104" width="170" height="20.5"/>
+                                <color key="backgroundColor" red="1" green="0.25284132739999998" blue="0.18376197590000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="VZ4-FB-zSN" firstAttribute="top" secondItem="EO3-sP-Go9" secondAttribute="bottom" id="52K-pb-7gW"/>
                             <constraint firstItem="EO3-sP-Go9" firstAttribute="leading" secondItem="ied-fF-rZ5" secondAttribute="leading" id="Ckf-xe-OVS"/>
                             <constraint firstAttribute="trailing" secondItem="EO3-sP-Go9" secondAttribute="trailing" id="HaW-UF-YMx"/>
+                            <constraint firstItem="zuH-Tn-zxg" firstAttribute="top" secondItem="Hbc-gY-G7e" secondAttribute="bottom" constant="40" id="Z9j-BQ-679"/>
                             <constraint firstItem="RQo-1X-SZS" firstAttribute="centerY" secondItem="ied-fF-rZ5" secondAttribute="centerY" id="jY9-LB-nNK"/>
                             <constraint firstItem="RQo-1X-SZS" firstAttribute="centerX" secondItem="ied-fF-rZ5" secondAttribute="centerX" id="smw-kZ-gH4"/>
+                            <constraint firstItem="zuH-Tn-zxg" firstAttribute="centerX" secondItem="ied-fF-rZ5" secondAttribute="centerX" id="xHU-83-HPd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vOk-3g-TGD">
@@ -91,6 +100,7 @@
                     <connections>
                         <outlet property="containerHeightCons" destination="0gw-Dj-nCX" id="RWb-Ef-m4w"/>
                         <outlet property="customTabBar" destination="EO3-sP-Go9" id="AeA-b1-WzZ"/>
+                        <outlet property="resultLabel" destination="zuH-Tn-zxg" id="dMZ-ZI-sxn"/>
                         <outlet property="scanLineCons" destination="fqM-Gq-w7T" id="yY6-Dh-tyd"/>
                         <outlet property="scanLineView" destination="J3G-Bt-zcB" id="9HX-aH-1lI"/>
                     </connections>
