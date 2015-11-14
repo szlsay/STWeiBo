@@ -16,6 +16,8 @@
 		77E071931BF6E8C6005BC40E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0718B1BF6E8C6005BC40E /* MainViewController.swift */; };
 		77E071941BF6E8C6005BC40E /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0718D1BF6E8C6005BC40E /* MessageTableViewController.swift */; };
 		77E071951BF6E8C6005BC40E /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0718F1BF6E8C6005BC40E /* ProfileTableViewController.swift */; };
+		77E071991BF6ED61005BC40E /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 77E071971BF6ED61005BC40E /* MainVCSettings.json */; };
+		77E0719A1BF6ED61005BC40E /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E071981BF6ED61005BC40E /* NullViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		77E0718B1BF6E8C6005BC40E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		77E0718D1BF6E8C6005BC40E /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
 		77E0718F1BF6E8C6005BC40E /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		77E071971BF6ED61005BC40E /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
+		77E071981BF6ED61005BC40E /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,7 @@
 		77E0718A1BF6E8C6005BC40E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				77E071961BF6ED61005BC40E /* Resource */,
 				77E0718B1BF6E8C6005BC40E /* MainViewController.swift */,
 			);
 			path = Main;
@@ -193,6 +198,15 @@
 			children = (
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		77E071961BF6ED61005BC40E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				77E071971BF6ED61005BC40E /* MainVCSettings.json */,
+				77E071981BF6ED61005BC40E /* NullViewController.swift */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77E071991BF6ED61005BC40E /* MainVCSettings.json in Resources */,
 				77E0715E1BF6E804005BC40E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +348,7 @@
 				77E071571BF6E804005BC40E /* AppDelegate.swift in Sources */,
 				77E071941BF6E8C6005BC40E /* MessageTableViewController.swift in Sources */,
 				77E071931BF6E8C6005BC40E /* MainViewController.swift in Sources */,
+				77E0719A1BF6ED61005BC40E /* NullViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
