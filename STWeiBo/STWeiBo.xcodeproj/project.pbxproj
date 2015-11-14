@@ -18,6 +18,9 @@
 		77E071951BF6E8C6005BC40E /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0718F1BF6E8C6005BC40E /* ProfileTableViewController.swift */; };
 		77E071991BF6ED61005BC40E /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 77E071971BF6ED61005BC40E /* MainVCSettings.json */; };
 		77E0719A1BF6ED61005BC40E /* NullViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E071981BF6ED61005BC40E /* NullViewController.swift */; };
+		77E0719C1BF6F114005BC40E /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0719B1BF6F114005BC40E /* UIView+AutoLayout.swift */; };
+		77E0719F1BF6F16D005BC40E /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0719D1BF6F16D005BC40E /* BaseTableViewController.swift */; };
+		77E071A01BF6F16D005BC40E /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0719E1BF6F16D005BC40E /* VisitorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		77E0718F1BF6E8C6005BC40E /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		77E071971BF6ED61005BC40E /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		77E071981BF6ED61005BC40E /* NullViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullViewController.swift; sourceTree = "<group>"; };
+		77E0719B1BF6F114005BC40E /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
+		77E0719D1BF6F16D005BC40E /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		77E0719E1BF6F16D005BC40E /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +179,8 @@
 			children = (
 				77E071961BF6ED61005BC40E /* Resource */,
 				77E0718B1BF6E8C6005BC40E /* MainViewController.swift */,
+				77E0719D1BF6F16D005BC40E /* BaseTableViewController.swift */,
+				77E0719E1BF6F16D005BC40E /* VisitorView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -196,6 +204,7 @@
 		77E071901BF6E8C6005BC40E /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				77E0719B1BF6F114005BC40E /* UIView+AutoLayout.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -342,11 +351,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77E0719F1BF6F16D005BC40E /* BaseTableViewController.swift in Sources */,
 				77E071951BF6E8C6005BC40E /* ProfileTableViewController.swift in Sources */,
 				77E071921BF6E8C6005BC40E /* HomeTableViewController.swift in Sources */,
 				77E071911BF6E8C6005BC40E /* DiscoverTableViewController.swift in Sources */,
 				77E071571BF6E804005BC40E /* AppDelegate.swift in Sources */,
 				77E071941BF6E8C6005BC40E /* MessageTableViewController.swift in Sources */,
+				77E0719C1BF6F114005BC40E /* UIView+AutoLayout.swift in Sources */,
+				77E071A01BF6F16D005BC40E /* VisitorView.swift in Sources */,
 				77E071931BF6E8C6005BC40E /* MainViewController.swift in Sources */,
 				77E0719A1BF6ED61005BC40E /* NullViewController.swift in Sources */,
 			);
