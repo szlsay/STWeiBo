@@ -29,6 +29,7 @@
 		77E071AD1BF72A9A005BC40E /* PopoverAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E071AC1BF72A9A005BC40E /* PopoverAnimator.swift */; };
 		77E071B51BF72FE0005BC40E /* QRCodeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77E071B31BF72FE0005BC40E /* QRCodeViewController.storyboard */; };
 		77E071B61BF72FE0005BC40E /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E071B41BF72FE0005BC40E /* QRCodeViewController.swift */; };
+		77E071B81BF73753005BC40E /* QRCodeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E071B71BF73753005BC40E /* QRCodeCardViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		77E071AC1BF72A9A005BC40E /* PopoverAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverAnimator.swift; sourceTree = "<group>"; };
 		77E071B31BF72FE0005BC40E /* QRCodeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCodeViewController.storyboard; sourceTree = "<group>"; };
 		77E071B41BF72FE0005BC40E /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		77E071B71BF73753005BC40E /* QRCodeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeCardViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +256,7 @@
 			children = (
 				77E071B31BF72FE0005BC40E /* QRCodeViewController.storyboard */,
 				77E071B41BF72FE0005BC40E /* QRCodeViewController.swift */,
+				77E071B71BF73753005BC40E /* QRCodeCardViewController.swift */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				77E071AB1BF72701005BC40E /* PopoverViewController.swift in Sources */,
 				77E071951BF6E8C6005BC40E /* ProfileTableViewController.swift in Sources */,
 				77E071921BF6E8C6005BC40E /* HomeTableViewController.swift in Sources */,
+				77E071B81BF73753005BC40E /* QRCodeCardViewController.swift in Sources */,
 				77E071911BF6E8C6005BC40E /* DiscoverTableViewController.swift in Sources */,
 				77E071571BF6E804005BC40E /* AppDelegate.swift in Sources */,
 				77E071A21BF72243005BC40E /* UIBarButtonItem+Category.swift in Sources */,

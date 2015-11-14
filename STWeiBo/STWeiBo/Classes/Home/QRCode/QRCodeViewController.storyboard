@@ -71,12 +71,20 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="扫描之后即可显示数据" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuH-Tn-zxg">
-                                <rect key="frame" x="215.5" y="104" width="170" height="20.5"/>
+                                <rect key="frame" x="215" y="104" width="170" height="20.5"/>
                                 <color key="backgroundColor" red="1" green="0.25284132739999998" blue="0.18376197590000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jAA-hF-QbV">
+                                <rect key="frame" x="270" y="472" width="60" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="我的名片" backgroundImage="qrcode_button_background"/>
+                                <connections>
+                                    <action selector="myCardBtnClick:" destination="oVG-jr-LuA" eventType="touchUpInside" id="Ijx-11-aE7"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -86,6 +94,8 @@
                             <constraint firstItem="zuH-Tn-zxg" firstAttribute="top" secondItem="Hbc-gY-G7e" secondAttribute="bottom" constant="40" id="Z9j-BQ-679"/>
                             <constraint firstItem="RQo-1X-SZS" firstAttribute="centerY" secondItem="ied-fF-rZ5" secondAttribute="centerY" id="jY9-LB-nNK"/>
                             <constraint firstItem="RQo-1X-SZS" firstAttribute="centerX" secondItem="ied-fF-rZ5" secondAttribute="centerX" id="smw-kZ-gH4"/>
+                            <constraint firstItem="jAA-hF-QbV" firstAttribute="centerX" secondItem="ied-fF-rZ5" secondAttribute="centerX" id="w7G-DO-akp"/>
+                            <constraint firstItem="jAA-hF-QbV" firstAttribute="top" secondItem="RQo-1X-SZS" secondAttribute="bottom" constant="22" id="weR-Zy-clg"/>
                             <constraint firstItem="zuH-Tn-zxg" firstAttribute="centerX" secondItem="ied-fF-rZ5" secondAttribute="centerX" id="xHU-83-HPd"/>
                         </constraints>
                     </view>
@@ -112,6 +122,7 @@
     </scenes>
     <resources>
         <image name="qrcode_border" width="51" height="51"/>
+        <image name="qrcode_button_background" width="34" height="32"/>
         <image name="qrcode_scanline_qrcode" width="218" height="170"/>
         <image name="qrcode_tabbar_icon_barcode" width="40" height="40"/>
         <image name="qrcode_tabbar_icon_qrcode" width="40" height="40"/>

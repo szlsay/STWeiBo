@@ -28,6 +28,15 @@ class QRCodeViewController: UIViewController, UITabBarDelegate {
     /// 保存扫描到的结果
     @IBOutlet weak var resultLabel: UILabel!
     
+    /**
+     监听名片按钮点击
+     */
+    @IBAction func myCardBtnClick(sender: AnyObject) {
+        
+        let vc = QRCodeCardViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
