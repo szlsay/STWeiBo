@@ -8,7 +8,52 @@
 
 import UIKit
 
+// Swift中如何定义协议: 必须遵守NSObjectProtocol
+protocol VisitorViewDelegate: NSObjectProtocol{
+    // 登录回调
+    func loginBtnWillClick()
+    // 注册回调
+    func registerBtnWillClick()
+}
+
+
 class VisitorView: UIView {
+
+    // 定义一个属性保存代理对象
+    // 一定要加上weak, 避免循环引用
+    weak var delegate: VisitorViewDelegate?
+    
+    /**
+     设置未登录界面
+     
+     :param: isHome    是否是首页
+     :param: imageName 需要展示的图标名称
+     :param: message   需要展示的文本内容
+     */
+    func setupVisitorInfo(isHome:Bool, imageName:String, message:String)
+    {
+        // 如果不是首页, 就隐藏转盘
+        iconView.hidden = !isHome
+        // 修改中间图标
+        homeIcon.image = UIImage(named: imageName)
+        // 修改文本
+        messageLabel.text = message
+        
+        // 判断是否需要执行动画
+        if isHome
+        {
+            startAnimation()
+        }
+    }
+    
+    func loginBtnClick(){
+        //        print(__FUNCTION__)
+        delegate?.loginBtnWillClick()
+    }
+    func registerBtnClick(){
+        //        print(__FUNCTION__)
+        delegate?.registerBtnWillClick()
+    }
 
 
     override init(frame: CGRect) {
@@ -42,6 +87,22 @@ class VisitorView: UIView {
         // 2.5设置蒙版
         maskBGView.ST_Fill(self)
     }
+    
+    // MARK: - 内部控制方法
+    private func startAnimation(){
+        // 1.创建动画
+        let anim = CABasicAnimation(keyPath: "transform.rotation")
+        // 2.设置动画属性
+        anim.toValue = 2 * M_PI
+        anim.duration = 20
+        anim.repeatCount = MAXFLOAT
+        
+        // 该属性默认为YES, 代表动画只要执行完毕就移除
+        anim.removedOnCompletion = false
+        // 3.将动画添加到图层上
+        iconView.layer.addAnimation(anim, forKey: nil)
+    }
+
 
     // Swift推荐我们自定义一个控件,要么用纯代码, 要么就用xib/stroyboard
     required init?(coder aDecoder: NSCoder) {
@@ -65,7 +126,7 @@ class VisitorView: UIView {
         let label = UILabel()
         label.numberOfLines = 0
         label.textColor = UIColor.darkGrayColor()
-        label.text = "打附加赛可垃圾分类考试的减肥了快速的减肥两款手机的两款手机立刻"
+        label.text = "小沈的仿写小码哥的大神一期的Demo"
         return label
     }()
     /// 登录按钮
@@ -74,6 +135,8 @@ class VisitorView: UIView {
         btn.setTitleColor(UIColor.darkGrayColor(), forState: UIControlState.Normal)
         btn.setTitle("登录", forState: UIControlState.Normal)
         btn.setBackgroundImage(UIImage(named: "common_button_white_disable"), forState: UIControlState.Normal)
+        
+        btn.addTarget(self, action: "loginBtnClick", forControlEvents: UIControlEvents.TouchUpInside)
         return btn
     }()
     /// 注册按钮
@@ -82,6 +145,8 @@ class VisitorView: UIView {
         btn.setTitleColor(UIColor.orangeColor(), forState: UIControlState.Normal)
         btn.setTitle("注册", forState: UIControlState.Normal)
         btn.setBackgroundImage(UIImage(named: "common_button_white_disable"), forState: UIControlState.Normal)
+        
+        btn.addTarget(self, action: "registerBtnClick", forControlEvents: UIControlEvents.TouchUpInside)
         return btn
     }()
     
