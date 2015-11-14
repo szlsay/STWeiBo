@@ -22,14 +22,16 @@ class HomeTableViewController: BaseTableViewController{
         // 2.初始化导航条
         setupNav()
         
-        
+        // 3.注册通知, 监听菜单
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "change", name: STPopoverAnimatorWillShow, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "change", name: STPopoverAnimatorWilldismiss, object: nil)
     }
     deinit
     {
         // 移除通知
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
-    
+
     /**
      修改标题按钮的状态
      */
@@ -83,7 +85,10 @@ class HomeTableViewController: BaseTableViewController{
     
     func rightItemClick()
     {
-        print(__FUNCTION__)
+//        print(__FUNCTION__)
+        let sb = UIStoryboard(name: "QRCodeViewController", bundle: nil)
+        let vc = sb.instantiateInitialViewController()
+        presentViewController(vc!, animated: true, completion: nil)
     }
     
     // MARK: - 懒加载
