@@ -1,0 +1,567 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		77E071571BF6E804005BC40E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E071561BF6E804005BC40E /* AppDelegate.swift */; };
+		77E0715E1BF6E804005BC40E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E0715D1BF6E804005BC40E /* Assets.xcassets */; };
+		77E0716C1BF6E805005BC40E /* STWeiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0716B1BF6E805005BC40E /* STWeiBoTests.swift */; };
+		77E071771BF6E805005BC40E /* STWeiBoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E071761BF6E805005BC40E /* STWeiBoUITests.swift */; };
+		77E071911BF6E8C6005BC40E /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E071871BF6E8C6005BC40E /* DiscoverTableViewController.swift */; };
+		77E071921BF6E8C6005BC40E /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E071891BF6E8C6005BC40E /* HomeTableViewController.swift */; };
+		77E071931BF6E8C6005BC40E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0718B1BF6E8C6005BC40E /* MainViewController.swift */; };
+		77E071941BF6E8C6005BC40E /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0718D1BF6E8C6005BC40E /* MessageTableViewController.swift */; };
+		77E071951BF6E8C6005BC40E /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0718F1BF6E8C6005BC40E /* ProfileTableViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		77E071681BF6E805005BC40E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77E0714B1BF6E804005BC40E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 77E071521BF6E804005BC40E;
+			remoteInfo = STWeiBo;
+		};
+		77E071731BF6E805005BC40E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 77E0714B1BF6E804005BC40E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 77E071521BF6E804005BC40E;
+			remoteInfo = STWeiBo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		77E071531BF6E804005BC40E /* STWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		77E071561BF6E804005BC40E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		77E0715D1BF6E804005BC40E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		77E071621BF6E804005BC40E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77E071671BF6E805005BC40E /* STWeiBoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STWeiBoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		77E0716B1BF6E805005BC40E /* STWeiBoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STWeiBoTests.swift; sourceTree = "<group>"; };
+		77E0716D1BF6E805005BC40E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77E071721BF6E805005BC40E /* STWeiBoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = STWeiBoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		77E071761BF6E805005BC40E /* STWeiBoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STWeiBoUITests.swift; sourceTree = "<group>"; };
+		77E071781BF6E805005BC40E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77E071871BF6E8C6005BC40E /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
+		77E071891BF6E8C6005BC40E /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		77E0718B1BF6E8C6005BC40E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		77E0718D1BF6E8C6005BC40E /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
+		77E0718F1BF6E8C6005BC40E /* ProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		77E071501BF6E804005BC40E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77E071641BF6E805005BC40E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77E0716F1BF6E805005BC40E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		77E0714A1BF6E804005BC40E = {
+			isa = PBXGroup;
+			children = (
+				77E071551BF6E804005BC40E /* STWeiBo */,
+				77E0716A1BF6E805005BC40E /* STWeiBoTests */,
+				77E071751BF6E805005BC40E /* STWeiBoUITests */,
+				77E071541BF6E804005BC40E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		77E071541BF6E804005BC40E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				77E071531BF6E804005BC40E /* STWeiBo.app */,
+				77E071671BF6E805005BC40E /* STWeiBoTests.xctest */,
+				77E071721BF6E805005BC40E /* STWeiBoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		77E071551BF6E804005BC40E /* STWeiBo */ = {
+			isa = PBXGroup;
+			children = (
+				77E071561BF6E804005BC40E /* AppDelegate.swift */,
+				77E071841BF6E8C6005BC40E /* Classes */,
+				77E0715D1BF6E804005BC40E /* Assets.xcassets */,
+				77E071621BF6E804005BC40E /* Info.plist */,
+			);
+			path = STWeiBo;
+			sourceTree = "<group>";
+		};
+		77E0716A1BF6E805005BC40E /* STWeiBoTests */ = {
+			isa = PBXGroup;
+			children = (
+				77E0716B1BF6E805005BC40E /* STWeiBoTests.swift */,
+				77E0716D1BF6E805005BC40E /* Info.plist */,
+			);
+			path = STWeiBoTests;
+			sourceTree = "<group>";
+		};
+		77E071751BF6E805005BC40E /* STWeiBoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				77E071761BF6E805005BC40E /* STWeiBoUITests.swift */,
+				77E071781BF6E805005BC40E /* Info.plist */,
+			);
+			path = STWeiBoUITests;
+			sourceTree = "<group>";
+		};
+		77E071841BF6E8C6005BC40E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				77E071851BF6E8C6005BC40E /* Common */,
+				77E071861BF6E8C6005BC40E /* Discover */,
+				77E071881BF6E8C6005BC40E /* Home */,
+				77E0718A1BF6E8C6005BC40E /* Main */,
+				77E0718C1BF6E8C6005BC40E /* Message */,
+				77E0718E1BF6E8C6005BC40E /* Profile */,
+				77E071901BF6E8C6005BC40E /* Tools */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		77E071851BF6E8C6005BC40E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		77E071861BF6E8C6005BC40E /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				77E071871BF6E8C6005BC40E /* DiscoverTableViewController.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		77E071881BF6E8C6005BC40E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				77E071891BF6E8C6005BC40E /* HomeTableViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		77E0718A1BF6E8C6005BC40E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				77E0718B1BF6E8C6005BC40E /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		77E0718C1BF6E8C6005BC40E /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				77E0718D1BF6E8C6005BC40E /* MessageTableViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		77E0718E1BF6E8C6005BC40E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				77E0718F1BF6E8C6005BC40E /* ProfileTableViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		77E071901BF6E8C6005BC40E /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		77E071521BF6E804005BC40E /* STWeiBo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77E0717B1BF6E805005BC40E /* Build configuration list for PBXNativeTarget "STWeiBo" */;
+			buildPhases = (
+				77E0714F1BF6E804005BC40E /* Sources */,
+				77E071501BF6E804005BC40E /* Frameworks */,
+				77E071511BF6E804005BC40E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = STWeiBo;
+			productName = STWeiBo;
+			productReference = 77E071531BF6E804005BC40E /* STWeiBo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		77E071661BF6E805005BC40E /* STWeiBoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77E0717E1BF6E805005BC40E /* Build configuration list for PBXNativeTarget "STWeiBoTests" */;
+			buildPhases = (
+				77E071631BF6E805005BC40E /* Sources */,
+				77E071641BF6E805005BC40E /* Frameworks */,
+				77E071651BF6E805005BC40E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				77E071691BF6E805005BC40E /* PBXTargetDependency */,
+			);
+			name = STWeiBoTests;
+			productName = STWeiBoTests;
+			productReference = 77E071671BF6E805005BC40E /* STWeiBoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		77E071711BF6E805005BC40E /* STWeiBoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77E071811BF6E805005BC40E /* Build configuration list for PBXNativeTarget "STWeiBoUITests" */;
+			buildPhases = (
+				77E0716E1BF6E805005BC40E /* Sources */,
+				77E0716F1BF6E805005BC40E /* Frameworks */,
+				77E071701BF6E805005BC40E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				77E071741BF6E805005BC40E /* PBXTargetDependency */,
+			);
+			name = STWeiBoUITests;
+			productName = STWeiBoUITests;
+			productReference = 77E071721BF6E805005BC40E /* STWeiBoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		77E0714B1BF6E804005BC40E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = ST;
+				TargetAttributes = {
+					77E071521BF6E804005BC40E = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = Z25J3BA353;
+					};
+					77E071661BF6E805005BC40E = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = Z25J3BA353;
+						TestTargetID = 77E071521BF6E804005BC40E;
+					};
+					77E071711BF6E805005BC40E = {
+						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = Z25J3BA353;
+						TestTargetID = 77E071521BF6E804005BC40E;
+					};
+				};
+			};
+			buildConfigurationList = 77E0714E1BF6E804005BC40E /* Build configuration list for PBXProject "STWeiBo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 77E0714A1BF6E804005BC40E;
+			productRefGroup = 77E071541BF6E804005BC40E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				77E071521BF6E804005BC40E /* STWeiBo */,
+				77E071661BF6E805005BC40E /* STWeiBoTests */,
+				77E071711BF6E805005BC40E /* STWeiBoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		77E071511BF6E804005BC40E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77E0715E1BF6E804005BC40E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77E071651BF6E805005BC40E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77E071701BF6E805005BC40E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		77E0714F1BF6E804005BC40E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77E071951BF6E8C6005BC40E /* ProfileTableViewController.swift in Sources */,
+				77E071921BF6E8C6005BC40E /* HomeTableViewController.swift in Sources */,
+				77E071911BF6E8C6005BC40E /* DiscoverTableViewController.swift in Sources */,
+				77E071571BF6E804005BC40E /* AppDelegate.swift in Sources */,
+				77E071941BF6E8C6005BC40E /* MessageTableViewController.swift in Sources */,
+				77E071931BF6E8C6005BC40E /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77E071631BF6E805005BC40E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77E0716C1BF6E805005BC40E /* STWeiBoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77E0716E1BF6E805005BC40E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77E071771BF6E805005BC40E /* STWeiBoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		77E071691BF6E805005BC40E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 77E071521BF6E804005BC40E /* STWeiBo */;
+			targetProxy = 77E071681BF6E805005BC40E /* PBXContainerItemProxy */;
+		};
+		77E071741BF6E805005BC40E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 77E071521BF6E804005BC40E /* STWeiBo */;
+			targetProxy = 77E071731BF6E805005BC40E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		77E071791BF6E805005BC40E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		77E0717A1BF6E805005BC40E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		77E0717C1BF6E805005BC40E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = STWeiBo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shentian.STWeiBo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		77E0717D1BF6E805005BC40E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = STWeiBo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shentian.STWeiBo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		77E0717F1BF6E805005BC40E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = STWeiBoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shentian.STWeiBoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/STWeiBo.app/STWeiBo";
+			};
+			name = Debug;
+		};
+		77E071801BF6E805005BC40E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = STWeiBoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shentian.STWeiBoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/STWeiBo.app/STWeiBo";
+			};
+			name = Release;
+		};
+		77E071821BF6E805005BC40E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = STWeiBoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shentian.STWeiBoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = STWeiBo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		77E071831BF6E805005BC40E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = STWeiBoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.shentian.STWeiBoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = STWeiBo;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		77E0714E1BF6E804005BC40E /* Build configuration list for PBXProject "STWeiBo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77E071791BF6E805005BC40E /* Debug */,
+				77E0717A1BF6E805005BC40E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		77E0717B1BF6E805005BC40E /* Build configuration list for PBXNativeTarget "STWeiBo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77E0717C1BF6E805005BC40E /* Debug */,
+				77E0717D1BF6E805005BC40E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		77E0717E1BF6E805005BC40E /* Build configuration list for PBXNativeTarget "STWeiBoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77E0717F1BF6E805005BC40E /* Debug */,
+				77E071801BF6E805005BC40E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		77E071811BF6E805005BC40E /* Build configuration list for PBXNativeTarget "STWeiBoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77E071821BF6E805005BC40E /* Debug */,
+				77E071831BF6E805005BC40E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 77E0714B1BF6E804005BC40E /* Project object */;
+}
