@@ -22,29 +22,21 @@ class HomeTableViewController: BaseTableViewController {
     
     private func setupNav()
     {
-        /*
-        // 1.左边按钮
-        let leftBtn = UIButton()
-        leftBtn.setImage(UIImage(named: "navigationbar_friendattention"), forState: UIControlState.Normal)
-        leftBtn.setImage(UIImage(named: "navigationbar_friendattention_highlighted"), forState: UIControlState.Highlighted)
-        leftBtn.sizeToFit()
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
-        
-        // 2.右边按钮
-        // command + control + e
-        let rightBtn = UIButton()
-        rightBtn.setImage(UIImage(named: "navigationbar_pop"), forState: UIControlState.Normal)
-        rightBtn.setImage(UIImage(named: "navigationbar_pop_highlighted"), forState: UIControlState.Highlighted)
-        rightBtn.sizeToFit()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: rightBtn)
-        */
-        /*
-        navigationItem.leftBarButtonItem = creatBarButtonItem("navigationbar_friendattention", target: self, action: "leftItemClick")
-        navigationItem.rightBarButtonItem = creatBarButtonItem("navigationbar_pop", target: self, action: "rightItemClick")
-        */
-        
+        // 1.初始化左右按钮
         navigationItem.leftBarButtonItem = UIBarButtonItem.creatBarButtonItem("navigationbar_friendattention", target: self, action: "leftItemClick")
         navigationItem.rightBarButtonItem = UIBarButtonItem.creatBarButtonItem("navigationbar_pop", target: self, action: "rightItemClick")
+        
+        // 2.初始化标题按钮
+        let titleBtn = TitleButton()
+        titleBtn.setTitle("小沈微博 ", forState: UIControlState.Normal)
+        titleBtn.addTarget(self, action: "titleBtnClick:",
+            forControlEvents: UIControlEvents.TouchUpInside)
+        navigationItem.titleView = titleBtn
+    }
+    
+    func titleBtnClick(btn: TitleButton)
+    {
+        btn.selected = !btn.selected
     }
     
     func leftItemClick()

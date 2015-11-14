@@ -22,6 +22,7 @@
 		77E0719F1BF6F16D005BC40E /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0719D1BF6F16D005BC40E /* BaseTableViewController.swift */; };
 		77E071A01BF6F16D005BC40E /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0719E1BF6F16D005BC40E /* VisitorView.swift */; };
 		77E071A21BF72243005BC40E /* UIBarButtonItem+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E071A11BF72243005BC40E /* UIBarButtonItem+Category.swift */; };
+		77E071A41BF72434005BC40E /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E071A31BF72434005BC40E /* TitleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		77E0719D1BF6F16D005BC40E /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		77E0719E1BF6F16D005BC40E /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		77E071A11BF72243005BC40E /* UIBarButtonItem+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Category.swift"; sourceTree = "<group>"; };
+		77E071A31BF72434005BC40E /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				77E071A11BF72243005BC40E /* UIBarButtonItem+Category.swift */,
+				77E071A31BF72434005BC40E /* TitleButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				77E0719C1BF6F114005BC40E /* UIView+AutoLayout.swift in Sources */,
 				77E071A01BF6F16D005BC40E /* VisitorView.swift in Sources */,
 				77E071931BF6E8C6005BC40E /* MainViewController.swift in Sources */,
+				77E071A41BF72434005BC40E /* TitleButton.swift in Sources */,
 				77E0719A1BF6ED61005BC40E /* NullViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
