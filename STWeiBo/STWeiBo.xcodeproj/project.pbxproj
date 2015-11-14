@@ -21,6 +21,7 @@
 		77E0719C1BF6F114005BC40E /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0719B1BF6F114005BC40E /* UIView+AutoLayout.swift */; };
 		77E0719F1BF6F16D005BC40E /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0719D1BF6F16D005BC40E /* BaseTableViewController.swift */; };
 		77E071A01BF6F16D005BC40E /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0719E1BF6F16D005BC40E /* VisitorView.swift */; };
+		77E071A21BF72243005BC40E /* UIBarButtonItem+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E071A11BF72243005BC40E /* UIBarButtonItem+Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		77E0719B1BF6F114005BC40E /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 		77E0719D1BF6F16D005BC40E /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		77E0719E1BF6F16D005BC40E /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		77E071A11BF72243005BC40E /* UIBarButtonItem+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Category.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 		77E071851BF6E8C6005BC40E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				77E071A11BF72243005BC40E /* UIBarButtonItem+Category.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				77E071921BF6E8C6005BC40E /* HomeTableViewController.swift in Sources */,
 				77E071911BF6E8C6005BC40E /* DiscoverTableViewController.swift in Sources */,
 				77E071571BF6E804005BC40E /* AppDelegate.swift in Sources */,
+				77E071A21BF72243005BC40E /* UIBarButtonItem+Category.swift in Sources */,
 				77E071941BF6E8C6005BC40E /* MessageTableViewController.swift in Sources */,
 				77E0719C1BF6F114005BC40E /* UIView+AutoLayout.swift in Sources */,
 				77E071A01BF6F16D005BC40E /* VisitorView.swift in Sources */,
