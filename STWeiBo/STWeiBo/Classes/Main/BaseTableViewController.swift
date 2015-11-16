@@ -51,6 +51,7 @@ class BaseTableViewController: UITableViewController ,VisitorViewDelegate{
     }
     func registerBtnWillClick() {
         print(__FUNCTION__)
+        print("\(__FUNCTION__) \(UserAccount.loadAccount())")
     }
     
 }
