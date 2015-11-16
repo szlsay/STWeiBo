@@ -106,10 +106,34 @@ extension OAuthViewController: UIWebViewDelegate
         let params = ["client_id":WB_App_Key, "client_secret":WB_App_Secret, "grant_type":"authorization_code", "code":code, "redirect_uri":WB_redirect_uri]
         // 3.发送POST请求
         NetworkTools.shareNetworkTools().POST(path, parameters: params, success: { (_, JSON) -> Void in
-            print(JSON)
+            /*
+            do{
+            // 验证expires_in不是字符串
+            let data = try NSJSONSerialization.dataWithJSONObject(JSON, options: NSJSONWritingOptions.PrettyPrinted)
+            let str =  NSString(data: data, encoding: NSUTF8StringEncoding)
+            print(str)
+            
+            }catch{
+            
+            }
+            */
+            
+            /*
+            结论:
+            同一个用户对同一个应用程序授权多次access_token是一样的
+            每个access_token都是有过期时间的:
+            1.如果自己对自己的应用进行授权, 有效时间是5年差1天
+            2.如果其他人对你的应用进行授权, 优先时间是3天
+            */
+            // 2.00SqDL_CCNedrCa453e36fccQPLXHB
+            // 2.00SqDL_CCNedrCa453e36fccQPLXHB
+            //                print(JSON)
+            
+            let account = UserAccount(dict: JSON as! [String : AnyObject])
+            print(account)
+            
             }) { (_, error) -> Void in
                 print(error)
         }
     }
 }
-
