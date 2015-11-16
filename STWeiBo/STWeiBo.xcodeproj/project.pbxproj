@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		771144641BF9770A00665541 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771144631BF9770A00665541 /* OAuthViewController.swift */; };
 		77E071571BF6E804005BC40E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E071561BF6E804005BC40E /* AppDelegate.swift */; };
 		77E0715E1BF6E804005BC40E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E0715D1BF6E804005BC40E /* Assets.xcassets */; };
 		77E0716C1BF6E805005BC40E /* STWeiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0716B1BF6E805005BC40E /* STWeiBoTests.swift */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		018EF8D1E11DDBCA3AD05A88 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		771144631BF9770A00665541 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		77E071531BF6E804005BC40E /* STWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E071561BF6E804005BC40E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77E0715D1BF6E804005BC40E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,6 +113,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		771144621BF9770A00665541 /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				771144631BF9770A00665541 /* OAuthViewController.swift */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
 		77E0714A1BF6E804005BC40E = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +175,7 @@
 		77E071841BF6E8C6005BC40E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				771144621BF9770A00665541 /* OAuth */,
 				77E071851BF6E8C6005BC40E /* Common */,
 				77E071861BF6E8C6005BC40E /* Discover */,
 				77E071881BF6E8C6005BC40E /* Home */,
@@ -481,6 +492,7 @@
 				77E071911BF6E8C6005BC40E /* DiscoverTableViewController.swift in Sources */,
 				77E071571BF6E804005BC40E /* AppDelegate.swift in Sources */,
 				77E071A21BF72243005BC40E /* UIBarButtonItem+Category.swift in Sources */,
+				771144641BF9770A00665541 /* OAuthViewController.swift in Sources */,
 				77E071941BF6E8C6005BC40E /* MessageTableViewController.swift in Sources */,
 				77E0719C1BF6F114005BC40E /* UIView+AutoLayout.swift in Sources */,
 				77E071AD1BF72A9A005BC40E /* PopoverAnimator.swift in Sources */,
