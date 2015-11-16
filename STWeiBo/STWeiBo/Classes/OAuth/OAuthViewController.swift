@@ -9,7 +9,7 @@
 import UIKit
 
 class OAuthViewController: UIViewController {
-
+    
     let WB_App_Key = "1946603044"
     let WB_App_Secret = "f9c43774ae9264439076483ec77deb3c"
     let WB_redirect_uri = "http://home.cnblogs.com/u/shentian"
@@ -76,11 +76,12 @@ extension OAuthViewController: UIWebViewDelegate
         if request.URL!.query!.hasPrefix(codeStr)
         {
             // 授权成功
-            print("授权成功")
-            // 取出已经授权的RequestToken
-            // codeStr.endIndex是拿到code=最后的位置
+            // 1.取出已经授权的RequestToken
             let code = request.URL!.query?.substringFromIndex(codeStr.endIndex)
-            print(code)
+            
+            // 2.利用已经授权的RequestToken换取AccessToken
+            loadAccessToken(code!)
+
         }else
         {
             // 取消授权
@@ -91,4 +92,24 @@ extension OAuthViewController: UIWebViewDelegate
         
         return false
     }
+    
+    /**
+     换取AccessToken
+     
+     :param: code 已经授权的RequestToken
+     */
+    private func loadAccessToken(code: String)
+    {
+        // 1.定义路径
+        let path = "oauth2/access_token"
+        // 2.封装参数
+        let params = ["client_id":WB_App_Key, "client_secret":WB_App_Secret, "grant_type":"authorization_code", "code":code, "redirect_uri":WB_redirect_uri]
+        // 3.发送POST请求
+        NetworkTools.shareNetworkTools().POST(path, parameters: params, success: { (_, JSON) -> Void in
+            print(JSON)
+            }) { (_, error) -> Void in
+                print(error)
+        }
+    }
 }
+

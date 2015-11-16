@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		771144641BF9770A00665541 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771144631BF9770A00665541 /* OAuthViewController.swift */; };
+		771144661BF97FE200665541 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771144651BF97FE200665541 /* NetworkTools.swift */; };
 		77E071571BF6E804005BC40E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E071561BF6E804005BC40E /* AppDelegate.swift */; };
 		77E0715E1BF6E804005BC40E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E0715D1BF6E804005BC40E /* Assets.xcassets */; };
 		77E0716C1BF6E805005BC40E /* STWeiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0716B1BF6E805005BC40E /* STWeiBoTests.swift */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		018EF8D1E11DDBCA3AD05A88 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		771144631BF9770A00665541 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
+		771144651BF97FE200665541 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		77E071531BF6E804005BC40E /* STWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E071561BF6E804005BC40E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77E0715D1BF6E804005BC40E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -245,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				77E0719B1BF6F114005BC40E /* UIView+AutoLayout.swift */,
+				771144651BF97FE200665541 /* NetworkTools.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				77E071B61BF72FE0005BC40E /* QRCodeViewController.swift in Sources */,
 				77E071AB1BF72701005BC40E /* PopoverViewController.swift in Sources */,
 				77E071951BF6E8C6005BC40E /* ProfileTableViewController.swift in Sources */,
+				771144661BF97FE200665541 /* NetworkTools.swift in Sources */,
 				77E071921BF6E8C6005BC40E /* HomeTableViewController.swift in Sources */,
 				77E071B81BF73753005BC40E /* QRCodeCardViewController.swift in Sources */,
 				77E071911BF6E8C6005BC40E /* DiscoverTableViewController.swift in Sources */,
