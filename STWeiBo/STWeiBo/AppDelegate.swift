@@ -34,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.whiteColor()
         
         // 2.创建根控制器
-        window?.rootViewController = MainViewController()
+        window?.rootViewController = NewfeatureCollectionViewController()
         window?.makeKeyAndVisible()
     }
 }
