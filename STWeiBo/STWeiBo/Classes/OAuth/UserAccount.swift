@@ -36,25 +36,36 @@ class UserAccount: NSObject , NSCoding{
         // 3.将字典转换为字符串
         return "\(dict)"
     }
+    
+    /**
+     返回用户是否登录
+     */
+    class func userLogin() -> Bool
+    {
+        return UserAccount.loadAccount() != nil
+    }
+    
     // MARK: - 保存和读取  Keyed
     /**
     保存授权模型
     */
     func saveAccount()
     {
-        let path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true).last!
-        let filePath = (path as NSString).stringByAppendingPathComponent("account.plist")
-        print("filePath \(filePath)")
-        NSKeyedArchiver.archiveRootObject(self, toFile: filePath)
+        NSKeyedArchiver.archiveRootObject(self, toFile: "account.plist".cacheDir())
     }
     
     /// 加载授权模型
+    static var account: UserAccount?
+    
     class func loadAccount() -> UserAccount? {
-        let path = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.CachesDirectory, NSSearchPathDomainMask.UserDomainMask, true).last!
-        let filePath = (path as NSString).stringByAppendingPathComponent("account.plist")
-        print("filePath \(filePath)")
+        // 1.判断是否已经加载过
+        if account != nil
+        {
+            return account
+        }
+        // 2.加载授权模型
         
-        let account =  NSKeyedUnarchiver.unarchiveObjectWithFile(filePath) as? UserAccount
+        account =  NSKeyedUnarchiver.unarchiveObjectWithFile("account.plist".cacheDir()) as? UserAccount
         return account
     }
     

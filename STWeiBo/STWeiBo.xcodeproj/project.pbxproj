@@ -10,6 +10,7 @@
 		771144641BF9770A00665541 /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771144631BF9770A00665541 /* OAuthViewController.swift */; };
 		771144661BF97FE200665541 /* NetworkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771144651BF97FE200665541 /* NetworkTools.swift */; };
 		771144681BF981D900665541 /* UserAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771144671BF981D900665541 /* UserAccount.swift */; };
+		7711446A1BF9990E00665541 /* String+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771144691BF9990E00665541 /* String+Category.swift */; };
 		77E071571BF6E804005BC40E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E071561BF6E804005BC40E /* AppDelegate.swift */; };
 		77E0715E1BF6E804005BC40E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E0715D1BF6E804005BC40E /* Assets.xcassets */; };
 		77E0716C1BF6E805005BC40E /* STWeiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0716B1BF6E805005BC40E /* STWeiBoTests.swift */; };
@@ -58,6 +59,7 @@
 		771144631BF9770A00665541 /* OAuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		771144651BF97FE200665541 /* NetworkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkTools.swift; sourceTree = "<group>"; };
 		771144671BF981D900665541 /* UserAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAccount.swift; sourceTree = "<group>"; };
+		771144691BF9990E00665541 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Category.swift"; sourceTree = "<group>"; };
 		77E071531BF6E804005BC40E /* STWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E071561BF6E804005BC40E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77E0715D1BF6E804005BC40E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 			children = (
 				77E0719B1BF6F114005BC40E /* UIView+AutoLayout.swift */,
 				771144651BF97FE200665541 /* NetworkTools.swift */,
+				771144691BF9990E00665541 /* String+Category.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 				77E071AD1BF72A9A005BC40E /* PopoverAnimator.swift in Sources */,
 				77E071A01BF6F16D005BC40E /* VisitorView.swift in Sources */,
 				77E071931BF6E8C6005BC40E /* MainViewController.swift in Sources */,
+				7711446A1BF9990E00665541 /* String+Category.swift in Sources */,
 				77E071A41BF72434005BC40E /* TitleButton.swift in Sources */,
 				77E0719A1BF6ED61005BC40E /* NullViewController.swift in Sources */,
 			);

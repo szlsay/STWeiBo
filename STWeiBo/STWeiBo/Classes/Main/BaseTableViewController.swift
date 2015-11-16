@@ -11,7 +11,7 @@ import UIKit
 class BaseTableViewController: UITableViewController ,VisitorViewDelegate{
 
     // 定义一个变量保存用户当前是否登录
-    var userLogin = false
+    var userLogin = UserAccount.userLogin()
     
     // 定义属性保存未登录界面
     var visitorView: VisitorView?
@@ -50,8 +50,7 @@ class BaseTableViewController: UITableViewController ,VisitorViewDelegate{
         presentViewController(nav, animated: true, completion: nil)
     }
     func registerBtnWillClick() {
-        print(__FUNCTION__)
-        print("\(__FUNCTION__) \(UserAccount.loadAccount())")
+        
     }
     
 }
