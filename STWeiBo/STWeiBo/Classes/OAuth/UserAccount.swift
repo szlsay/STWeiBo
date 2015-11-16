@@ -13,20 +13,37 @@ class UserAccount: NSObject , NSCoding{
  /// 用于调用access_token，接口获取授权后的access token。
     var access_token: String?
  /// access_token的生命周期，单位是秒数。
-    var expires_in: NSNumber?
- /// 当前授权用户的UID。
-    var uid:String?
+    var expires_in: NSNumber?{
+        didSet{
+            // 根据过期的秒数, 生成真正地过期时间
+            expires_Date = NSDate(timeIntervalSinceNow: expires_in!.doubleValue)
+            print(expires_Date)
+        }
+    }
     
+/// 保存用户过期时间
+    var expires_Date: NSDate?
+    
+/// 当前授权用户的UID。
+    var uid:String?
+//    
     
     override init() {
         
     }
     init(dict: [String: AnyObject])
     {
-        access_token = dict["access_token"] as? String
-        expires_in = dict["expires_in"] as? NSNumber
-        uid = dict["uid"] as? String
+        super.init()
+//        access_token = dict["access_token"] as? String
+//        expires_in = dict["expires_in"] as? NSNumber
+//        uid = dict["uid"] as? String
+        setValuesForKeysWithDictionary(dict)
     }
+    
+    override func setValue(value: AnyObject?, forUndefinedKey key: String) {
+        print(key)
+    }
+
     
     override var description: String{
         // 1.定义属性数组
@@ -66,6 +83,15 @@ class UserAccount: NSObject , NSCoding{
         // 2.加载授权模型
         
         account =  NSKeyedUnarchiver.unarchiveObjectWithFile("account.plist".cacheDir()) as? UserAccount
+        
+        // 3.判断授权信息是否过期
+        // 2020-09-08 03:49:39                       2020-09-09 03:49:39
+        if account?.expires_Date?.compare(NSDate()) == NSComparisonResult.OrderedAscending
+        {
+            // 已经过期
+            return nil
+        }
+
         return account
     }
     
@@ -75,6 +101,7 @@ class UserAccount: NSObject , NSCoding{
         aCoder.encodeObject(access_token, forKey: "access_token")
         aCoder.encodeObject(expires_in, forKey: "expires_in")
         aCoder.encodeObject(uid, forKey: "uid")
+        aCoder.encodeObject(expires_Date, forKey: "expires_Date")
     }
     
     // 从文件中读取对象
@@ -82,6 +109,7 @@ class UserAccount: NSObject , NSCoding{
         access_token = aDecoder.decodeObjectForKey("access_token") as? String
         expires_in = aDecoder.decodeObjectForKey("expires_in") as? NSNumber
         uid = aDecoder.decodeObjectForKey("uid") as? String
+        expires_Date = aDecoder.decodeObjectForKey("expires_Date") as? NSDate
     }
 }
 
