@@ -118,6 +118,8 @@ extension OAuthViewController: UIWebViewDelegate
         let params = ["client_id":WB_App_Key, "client_secret":WB_App_Secret, "grant_type":"authorization_code", "code":code, "redirect_uri":WB_redirect_uri]
         // 3.发送POST请求
         NetworkTools.shareNetworkTools().POST(path, parameters: params, success: { (_, JSON) -> Void in
+            
+            
             // 1.字典转模型
             /*
             plist : 特点只能存储系统自带的数据类型
@@ -127,6 +129,15 @@ extension OAuthViewController: UIWebViewDelegate
             数据库: 用于存储大数据 , 特点效率较高
             */
             let account = UserAccount(dict: JSON as! [String : AnyObject])
+            account.loadUserInfo { (account, error) -> () in
+                if account != nil
+                {
+                    account!.saveAccount()
+                }
+                
+                SVProgressHUD.showInfoWithStatus("网络不给力", maskType: SVProgressHUDMaskType.Black)
+            }
+
             
             // 2.归档模型
             account.saveAccount()
