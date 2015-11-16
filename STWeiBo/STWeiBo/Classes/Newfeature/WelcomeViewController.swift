@@ -23,7 +23,7 @@ class WelcomeViewController: UIViewController {
         
         // 2.布局子控件
         bgIV.ST_Fill(view)
-
+        
         let cons = iconView.ST_AlignInner(type: ST_AlignType.BottomCenter, referView: view, size: CGSize(width: 100, height: 100), offset: CGPoint(x: 0, y: -150))
         // 拿到头像的底部约束
         bottomCons = iconView.ST_Constraint(cons, attribute: NSLayoutAttribute.Bottom)
@@ -49,15 +49,15 @@ class WelcomeViewController: UIViewController {
         
         // 3.执行动画
         UIView.animateWithDuration(2, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
-                // 头像动画
-                self.iconView.layoutIfNeeded()
+            // 头像动画
+            self.iconView.layoutIfNeeded()
             }) { (_) -> Void in
- 
+                
                 // 文本动画
                 UIView.animateWithDuration( 2.0, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: UIViewAnimationOptions(rawValue: 0), animations: { () -> Void in
                     self.messageLabel.alpha = 1.0
                     }, completion: { (_) -> Void in
-                        print("OK")
+                        NSNotificationCenter.defaultCenter().postNotificationName(STSwitchRootViewControllerKey, object: true)
                 })
         }
         
@@ -67,14 +67,14 @@ class WelcomeViewController: UIViewController {
     private lazy var bgIV: UIImageView = UIImageView(image: UIImage(named: "ad_background"))
     
     private lazy var iconView: UIImageView = {
-       let iv = UIImageView(image: UIImage(named: "avatar_default_big"))
+        let iv = UIImageView(image: UIImage(named: "avatar_default_big"))
         iv.layer.cornerRadius = 50
         iv.clipsToBounds = true
         return iv
     }()
     
     private lazy var messageLabel: UILabel = {
-       let label = UILabel()
+        let label = UILabel()
         label.text = "欢迎回来"
         label.sizeToFit()
         label.alpha = 0.0

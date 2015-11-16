@@ -8,6 +8,9 @@
 
 import UIKit
 
+// 切换控制器通知
+let STSwitchRootViewControllerKey = "STSwitchRootViewControllerKey"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,10 +19,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        // 注册一个通知
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "switchRootViewController:", name: STSwitchRootViewControllerKey, object: nil)
+
+        
         self.setupStartUI()
         
         return true
     }
+
     
     func setupStartUI () {
         
@@ -34,11 +42,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.whiteColor()
         
         // 2.创建根控制器
-        window?.rootViewController = WelcomeViewController()
+        window?.rootViewController = defaultContoller()
         window?.makeKeyAndVisible()
         
         print(isNewupdate())
     }
+    
+    
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func switchRootViewController(notify: NSNotification){
+        //        print(notify.object)
+        if notify.object as! Bool
+        {
+            window?.rootViewController = MainViewController()
+        }else
+        {
+            window?.rootViewController = WelcomeViewController()
+        }
+    }
+    
+    /**
+     用于获取默认界面
+     
+     :returns: 默认界面
+     */
+    private func defaultContoller() ->UIViewController
+    {
+        // 1.检测用户是否登录
+        if UserAccount.userLogin(){
+            return isNewupdate() ? NewfeatureCollectionViewController() : WelcomeViewController()
+        }
+        return MainViewController()
+    }
+
+
     
     private func isNewupdate() -> Bool{
         // 1.获取当前软件的版本号 --> info.plist
