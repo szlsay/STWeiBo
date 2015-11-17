@@ -15,6 +15,16 @@ class User: NSObject {
     var name: String?
     /// 用户头像地址（中图），50×50像素
     var profile_image_url: String?
+        {
+        didSet{
+            if let urlStr = profile_image_url
+            {
+                imageURL = NSURL(string: urlStr)
+            }
+        }
+    }
+    /// 用于保存用户头像的URL
+    var imageURL: NSURL?
     /// 时候是认证, true是, false不是
     var verified: Bool = false
     /// 用户的认证类型，-1：没有认证，0，认证用户，2,3,5: 企业认证，220: 达人
