@@ -42,7 +42,8 @@ class HomeTableViewController: BaseTableViewController{
         
 //        tableView.rowHeight = 200
         tableView.estimatedRowHeight = 200
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = 300
+//        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
         // 4.加载微博数据
