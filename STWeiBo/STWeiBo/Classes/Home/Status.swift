@@ -20,6 +20,9 @@ class Status: NSObject {
     /// 配图数组
     var pic_urls: [[String: AnyObject]]?
     
+    /// 用户信息
+    var user: User?
+    
     /// 加载微博数据
     class func loadStatuses(finished: (models:[Status]?, error:NSError?)->()){
         let path = "2/statuses/home_timeline.json"
@@ -56,6 +59,22 @@ class Status: NSObject {
     {
         super.init()
         setValuesForKeysWithDictionary(dict)
+    }
+    
+    // setValuesForKeysWithDictionary内部会调用以下方法
+    override func setValue(value: AnyObject?, forKey key: String) {
+        
+        //        print("key = \(key), value = \(value)")
+        // 1.判断当前是否正在给微博字典中的user字典赋值
+        if "user" == key
+        {
+            // 2.根据user key对应的字典创建一个模型
+            user = User(dict: value as! [String : AnyObject])
+            return
+        }
+        
+        // 3,调用父类方法, 按照系统默认处理
+        super.setValue(value, forKey: key)
     }
     
     override func setValue(value: AnyObject?, forUndefinedKey key: String) {
