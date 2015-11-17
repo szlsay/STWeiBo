@@ -38,7 +38,12 @@ class HomeTableViewController: BaseTableViewController{
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "change", name: STPopoverAnimatorWilldismiss, object: nil)
         
         // 注册一个cell
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: STHomeReuseIdentifier)
+        tableView.registerClass(StatusTableViewCell.self, forCellReuseIdentifier: STHomeReuseIdentifier)
+        
+//        tableView.rowHeight = 200
+        tableView.estimatedRowHeight = 200
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
         // 4.加载微博数据
         loadData()
@@ -142,10 +147,11 @@ extension HomeTableViewController
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // 1.获取cell
-        let cell = tableView.dequeueReusableCellWithIdentifier(STHomeReuseIdentifier, forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(STHomeReuseIdentifier, forIndexPath: indexPath) as! StatusTableViewCell
         // 2.设置数据
         let status = statuses![indexPath.row]
-        cell.textLabel?.text = status.text
+//        cell.textLabel?.text = status.text
+        cell.status = status
         // 3.返回cell
         return cell
     }
