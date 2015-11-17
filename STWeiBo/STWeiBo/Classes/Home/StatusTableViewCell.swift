@@ -30,6 +30,9 @@ class StatusTableViewCell: UITableViewCell {
             {
                 iconView.sd_setImageWithURL(url)
             }
+            
+            // 设置认证图标
+            verifiedView.image = status?.user?.verifiedImage
 
         }
     }
