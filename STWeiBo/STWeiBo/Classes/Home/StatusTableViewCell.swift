@@ -34,6 +34,9 @@ class StatusTableViewCell: UITableViewCell {
             // 设置认证图标
             verifiedView.image = status?.user?.verifiedImage
 
+            // 设置会员图标
+            print("mbrankImage = \(status?.user?.mbrankImage)")
+            vipView.image = status?.user?.mbrankImage
         }
     }
     
