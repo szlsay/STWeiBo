@@ -16,6 +16,9 @@
 		773A7F251BFAC79A002D3061 /* UILabel+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773A7F231BFAC79A002D3061 /* UILabel+Category.swift */; };
 		773A7F261BFAC79A002D3061 /* UIButton+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773A7F241BFAC79A002D3061 /* UIButton+Category.swift */; };
 		773A7F281BFAD5CA002D3061 /* NSDate+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773A7F271BFAD5CA002D3061 /* NSDate+Category.swift */; };
+		773A7F2C1BFAE65E002D3061 /* StatusTableViewBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773A7F291BFAE65E002D3061 /* StatusTableViewBottomView.swift */; };
+		773A7F2D1BFAE65E002D3061 /* StatusTableViewTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773A7F2A1BFAE65E002D3061 /* StatusTableViewTopView.swift */; };
+		773A7F2E1BFAE65E002D3061 /* StatusPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773A7F2B1BFAE65E002D3061 /* StatusPictureView.swift */; };
 		774AC2F71BFAB740000363D1 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774AC2F61BFAB740000363D1 /* Status.swift */; };
 		774AC2F91BFABAF0000363D1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774AC2F81BFABAF0000363D1 /* User.swift */; };
 		774AC2FB1BFABE7E000363D1 /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774AC2FA1BFABE7E000363D1 /* StatusTableViewCell.swift */; };
@@ -73,6 +76,9 @@
 		773A7F231BFAC79A002D3061 /* UILabel+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Category.swift"; sourceTree = "<group>"; };
 		773A7F241BFAC79A002D3061 /* UIButton+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Category.swift"; sourceTree = "<group>"; };
 		773A7F271BFAD5CA002D3061 /* NSDate+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Category.swift"; sourceTree = "<group>"; };
+		773A7F291BFAE65E002D3061 /* StatusTableViewBottomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewBottomView.swift; sourceTree = "<group>"; };
+		773A7F2A1BFAE65E002D3061 /* StatusTableViewTopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewTopView.swift; sourceTree = "<group>"; };
+		773A7F2B1BFAE65E002D3061 /* StatusPictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusPictureView.swift; sourceTree = "<group>"; };
 		774AC2F61BFAB740000363D1 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		774AC2F81BFABAF0000363D1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		774AC2FA1BFABE7E000363D1 /* StatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
@@ -246,6 +252,9 @@
 				77E071A51BF72701005BC40E /* Popover */,
 				77E071891BF6E8C6005BC40E /* HomeTableViewController.swift */,
 				774AC2FA1BFABE7E000363D1 /* StatusTableViewCell.swift */,
+				773A7F291BFAE65E002D3061 /* StatusTableViewBottomView.swift */,
+				773A7F2A1BFAE65E002D3061 /* StatusTableViewTopView.swift */,
+				773A7F2B1BFAE65E002D3061 /* StatusPictureView.swift */,
 				774AC2F61BFAB740000363D1 /* Status.swift */,
 				774AC2F81BFABAF0000363D1 /* User.swift */,
 			);
@@ -529,12 +538,14 @@
 				774AC2F91BFABAF0000363D1 /* User.swift in Sources */,
 				77E071AB1BF72701005BC40E /* PopoverViewController.swift in Sources */,
 				771144681BF981D900665541 /* UserAccount.swift in Sources */,
+				773A7F2D1BFAE65E002D3061 /* StatusTableViewTopView.swift in Sources */,
 				7711446F1BF9B9F400665541 /* WelcomeViewController.swift in Sources */,
 				77E071951BF6E8C6005BC40E /* ProfileTableViewController.swift in Sources */,
 				773A7F281BFAD5CA002D3061 /* NSDate+Category.swift in Sources */,
 				771144661BF97FE200665541 /* NetworkTools.swift in Sources */,
 				774AC2FB1BFABE7E000363D1 /* StatusTableViewCell.swift in Sources */,
 				77E071921BF6E8C6005BC40E /* HomeTableViewController.swift in Sources */,
+				773A7F2E1BFAE65E002D3061 /* StatusPictureView.swift in Sources */,
 				77E071B81BF73753005BC40E /* QRCodeCardViewController.swift in Sources */,
 				77E071911BF6E8C6005BC40E /* DiscoverTableViewController.swift in Sources */,
 				773A7F251BFAC79A002D3061 /* UILabel+Category.swift in Sources */,
@@ -548,6 +559,7 @@
 				773A7F261BFAC79A002D3061 /* UIButton+Category.swift in Sources */,
 				77E071AD1BF72A9A005BC40E /* PopoverAnimator.swift in Sources */,
 				77E071A01BF6F16D005BC40E /* VisitorView.swift in Sources */,
+				773A7F2C1BFAE65E002D3061 /* StatusTableViewBottomView.swift in Sources */,
 				77E071931BF6E8C6005BC40E /* MainViewController.swift in Sources */,
 				7711446A1BF9990E00665541 /* String+Category.swift in Sources */,
 				77E071A41BF72434005BC40E /* TitleButton.swift in Sources */,
