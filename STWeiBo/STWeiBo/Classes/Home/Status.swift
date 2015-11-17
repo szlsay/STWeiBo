@@ -17,6 +17,23 @@ class Status: NSObject {
     var text: String?
     /// 微博来源
     var source: String?
+        {
+        didSet{
+            // <a href=\"http://app.weibo.com/t/feed/4fuyNj\" rel=\"nofollow\">即刻笔记</a>
+            
+            // 1.截取字符串
+            if let str = source
+            {
+                // 1.1获取开始截取的位置
+                let startLocation = (str as NSString).rangeOfString(">").location + 1
+                // 1.2获取截取的长度
+                let length = (str as NSString).rangeOfString("<", options: NSStringCompareOptions.BackwardsSearch).location - startLocation
+                // 1.3截取字符串
+                source = "来自:" + (str as NSString).substringWithRange(NSMakeRange(startLocation, length))
+            }
+        }
+    }
+
     /// 配图数组
     var pic_urls: [[String: AnyObject]]?
     
