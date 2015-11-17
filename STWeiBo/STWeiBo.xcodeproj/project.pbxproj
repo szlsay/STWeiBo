@@ -13,6 +13,7 @@
 		7711446A1BF9990E00665541 /* String+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771144691BF9990E00665541 /* String+Category.swift */; };
 		7711446D1BF9AD6700665541 /* NewfeatureCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7711446C1BF9AD6700665541 /* NewfeatureCollectionViewController.swift */; };
 		7711446F1BF9B9F400665541 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7711446E1BF9B9F400665541 /* WelcomeViewController.swift */; };
+		774AC2F71BFAB740000363D1 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774AC2F61BFAB740000363D1 /* Status.swift */; };
 		77E071571BF6E804005BC40E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E071561BF6E804005BC40E /* AppDelegate.swift */; };
 		77E0715E1BF6E804005BC40E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E0715D1BF6E804005BC40E /* Assets.xcassets */; };
 		77E0716C1BF6E805005BC40E /* STWeiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0716B1BF6E805005BC40E /* STWeiBoTests.swift */; };
@@ -64,6 +65,7 @@
 		771144691BF9990E00665541 /* String+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Category.swift"; sourceTree = "<group>"; };
 		7711446C1BF9AD6700665541 /* NewfeatureCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewfeatureCollectionViewController.swift; sourceTree = "<group>"; };
 		7711446E1BF9B9F400665541 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		774AC2F61BFAB740000363D1 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		77E071531BF6E804005BC40E /* STWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E071561BF6E804005BC40E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77E0715D1BF6E804005BC40E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				77E071AE1BF72E23005BC40E /* QRCode */,
 				77E071A51BF72701005BC40E /* Popover */,
 				77E071891BF6E8C6005BC40E /* HomeTableViewController.swift */,
+				774AC2F61BFAB740000363D1 /* Status.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				77E071921BF6E8C6005BC40E /* HomeTableViewController.swift in Sources */,
 				77E071B81BF73753005BC40E /* QRCodeCardViewController.swift in Sources */,
 				77E071911BF6E8C6005BC40E /* DiscoverTableViewController.swift in Sources */,
+				774AC2F71BFAB740000363D1 /* Status.swift in Sources */,
 				77E071571BF6E804005BC40E /* AppDelegate.swift in Sources */,
 				77E071A21BF72243005BC40E /* UIBarButtonItem+Category.swift in Sources */,
 				771144641BF9770A00665541 /* OAuthViewController.swift in Sources */,

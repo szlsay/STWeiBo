@@ -7,7 +7,18 @@
 //
 import UIKit
 
+
+let STHomeReuseIdentifier = "STHomeReuseIdentifier"
 class HomeTableViewController: BaseTableViewController{
+    /// 保存微博数组
+    var statuses: [Status]?
+        {
+        didSet{
+            // 当别人设置完毕数据, 就刷新表格
+            tableView.reloadData()
+        }
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +36,12 @@ class HomeTableViewController: BaseTableViewController{
         // 3.注册通知, 监听菜单
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "change", name: STPopoverAnimatorWillShow, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "change", name: STPopoverAnimatorWilldismiss, object: nil)
+        
+        // 注册一个cell
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: STHomeReuseIdentifier)
+        
+        // 4.加载微博数据
+        loadData()
     }
     deinit
     {
@@ -32,6 +49,22 @@ class HomeTableViewController: BaseTableViewController{
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 
+    /**
+     获取微博数据
+     */
+    private func loadData()
+    {
+        Status.loadStatuses { (models, error) -> () in
+            
+            if error != nil
+            {
+                return
+            }
+            self.statuses = models
+        }
+    }
+
+    
     /**
      修改标题按钮的状态
      */
@@ -99,3 +132,22 @@ class HomeTableViewController: BaseTableViewController{
         return pa
     }()
 }
+
+
+extension HomeTableViewController
+{
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return statuses?.count ?? 0
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        // 1.获取cell
+        let cell = tableView.dequeueReusableCellWithIdentifier(STHomeReuseIdentifier, forIndexPath: indexPath)
+        // 2.设置数据
+        let status = statuses![indexPath.row]
+        cell.textLabel?.text = status.text
+        // 3.返回cell
+        return cell
+    }
+}
+
