@@ -8,6 +8,8 @@
 
 import UIKit
 
+import SDWebImage
+
 class StatusTableViewCell: UITableViewCell {
 
     var status: Status?
@@ -81,6 +83,57 @@ class StatusTableViewCell: UITableViewCell {
         
         footerView.ST_AlignInner(type: ST_AlignType.BottomRight, referView: contentView, size: nil, offset: CGPoint(x: -10, y: -10))
     }
+
+    
+    /**
+     计算配图的尺寸
+     */
+    private func calculateImageSize() -> CGSize
+    {
+        // 1.取出配图个数
+        let count = status?.storedPicURLS?.count
+        // 2.如果没有配图zero
+        if count == 0 || count == nil
+        {
+            return CGSizeZero
+        }
+        // 3.如果只有一张配图, 返回图片的实际大小
+        if count == 1
+        {
+            // 3.1取出缓存的图片
+            let key = status?.storedPicURLS!.first?.absoluteString
+            let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(key!)
+            // 3.2返回缓存图片的尺寸
+            return image.size
+        }
+        // 4.如果有4张配图, 计算田字格的大小
+        let width = 90
+        let margin = 10
+        if count == 4
+        {
+            let viewWidth = width * 2 + margin
+            return CGSize(width: viewWidth, height: viewWidth)
+        }
+        
+        // 5.如果是其它(多张), 计算九宫格的大小
+        /*
+        2/3
+        5/6
+        7/8/9
+        */
+        // 5.1计算列数
+        let colNumber = 3
+        // 5.2计算行数
+        //               (8 - 1) / 3 + 1
+        let rowNumber = (count! - 1) / 3 + 1
+        // 宽度 = 列数 * 图片的宽度 + (列数 - 1) * 间隙
+        let viewWidth = colNumber * width + (colNumber - 1) * margin
+        // 高度 = 行数 * 图片的高度 + (行数 - 1) * 间隙
+        let viewHeight = rowNumber * width + (rowNumber - 1) * margin
+        return CGSize(width: viewWidth, height: viewHeight)
+        
+    }
+    
 
     
     // MARK: - 懒加载

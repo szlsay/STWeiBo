@@ -35,6 +35,11 @@ class Status: NSObject {
             // 1.截取字符串
             if let str = source
             {
+                if str == ""
+                {
+                    return
+                }
+
                 // 1.1获取开始截取的位置
                 let startLocation = (str as NSString).rangeOfString(">").location + 1
                 // 1.2获取截取的长度
@@ -102,6 +107,11 @@ class Status: NSObject {
         // 1.缓存图片
         for status in list
         {
+            guard let _ = status.storedPicURLS else
+                {
+                    continue
+                }
+            
             for url in status.storedPicURLS!
             {
                 // 将当前的下载操作添加到组中
