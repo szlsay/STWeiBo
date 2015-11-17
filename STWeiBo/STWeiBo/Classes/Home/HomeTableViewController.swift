@@ -137,6 +137,15 @@ class HomeTableViewController: BaseTableViewController{
         pa.presentFrame = CGRect(x: 100, y: 56, width: 200, height: 350)
         return pa
     }()
+    
+    /// 微博行高的缓存, 利用字典作为容器. key就是微博的id, 值就是对应微博的行高
+    var rowCache: [Int: CGFloat] = [Int: CGFloat]()
+    
+    override func didReceiveMemoryWarning() {
+        // 清空缓存
+        rowCache.removeAll()
+    }
+
 }
 
 
@@ -156,5 +165,33 @@ extension HomeTableViewController
         // 3.返回cell
         return cell
     }
+    // 返回行高
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        // 1.取出对应行的模型
+        let status = statuses![indexPath.row]
+        
+        // 2.判断缓存中有没有
+        if let height = rowCache[status.id]
+        {
+            print("从缓存中获取")
+            return height
+        }
+        
+        // 3.拿到cell
+        let cell = tableView.dequeueReusableCellWithIdentifier(STHomeReuseIdentifier) as! StatusTableViewCell
+        // 注意点:不要使用以下方法获取, 在某些版本或者模拟器会有bug
+        //        tableView.dequeueReusableCellWithIdentifier(<#T##identifier: String##String#>, forIndexPath: <#T##NSIndexPath#>)
+        
+        // 4.拿到对应行的行高
+        let rowHeight = cell.rowHeight(status)
+        
+        // 5.缓存行高
+        rowCache[status.id] = rowHeight
+        print("重新计算")
+        
+        // 6.返回行高
+        return rowHeight
+    }
 }
+
 

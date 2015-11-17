@@ -108,6 +108,22 @@ class StatusTableViewCell: UITableViewCell {
     
     
     /**
+     用于获取行号
+     */
+    func rowHeight(status: Status) -> CGFloat
+    {
+        // 1.为了能够调用didSet, 计算配图的高度
+        self.status = status
+        
+        // 2.强制更新界面
+        self.layoutIfNeeded()
+        
+        // 3.返回底部视图最大的Y值
+        return CGRectGetMaxY(footerView.frame)
+    }
+
+    
+    /**
      计算配图的尺寸
      */
     private func calculateImageSize() -> (viewSize: CGSize, itemSize: CGSize)
