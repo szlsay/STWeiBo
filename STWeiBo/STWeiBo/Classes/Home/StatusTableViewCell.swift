@@ -10,6 +10,26 @@ import UIKit
 import SDWebImage
 
 let STPictureViewCellReuseIdentifier = "STPictureViewCellReuseIdentifier"
+
+/**
+ 保存cell的重用标示
+ 
+ - NormalCell:  原创微博的重用标识
+ - ForwardCell: 转发微博的重用标识
+ */
+enum StatusTableViewCellIdentifier: String
+{
+    case NormalCell = "NormalCell"
+    case ForwardCell = "ForwardCell"
+    
+    // 如果在枚举中利用static修饰一个方法 , 相当于类中的class修饰方法
+    // 如果调用枚举值的rawValue, 那么意味着拿到枚举对应的原始值
+    static func cellID(status: Status) ->String
+    {
+        return status.retweeted_status != nil ? ForwardCell.rawValue : NormalCell.rawValue
+    }
+}
+
 class StatusTableViewCell: UITableViewCell {
     
     /// 保存配图的宽度约束

@@ -74,6 +74,16 @@ class Status: NSObject {
     /// 用户信息
     var user: User?
     
+    /// 转发微博
+    var retweeted_status: Status?
+    
+    // 如果有转发, 原创就没有配图
+    /// 定义一个计算属性, 用于返回原创获取转发配图的URL数组
+    var pictureURLS:[NSURL]?
+        {
+            return retweeted_status != nil ? retweeted_status?.storedPicURLS : storedPicURLS
+    }
+    
     /// 加载微博数据
     class func loadStatuses(finished: (models:[Status]?, error:NSError?)->()){
         let path = "2/statuses/home_timeline.json"
@@ -165,6 +175,14 @@ class Status: NSObject {
             user = User(dict: value as! [String : AnyObject])
             return
         }
+        
+        // 2.判断是否是转发微博, 如果是就自己处理
+        if "retweeted_status" == key
+        {
+            retweeted_status = Status(dict: value as! [String : AnyObject])
+            return
+        }
+
         
         // 3,调用父类方法, 按照系统默认处理
         super.setValue(value, forKey: key)
