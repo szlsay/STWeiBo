@@ -40,12 +40,22 @@ class HomeTableViewController: BaseTableViewController{
         // 注册一个cell
         tableView.registerClass(StatusNormalTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.NormalCell.rawValue)
         tableView.registerClass(StatusForwardTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.ForwardCell.rawValue)
-//        tableView.rowHeight = 200
-//        tableView.estimatedRowHeight = 200
-//        tableView.rowHeight = 300
-//        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
+        
+        // 4.添加下拉刷新控件
+        /*
+        refreshControl = UIRefreshControl()
+        let refreshView = UIView()
+        refreshView.backgroundColor = UIColor.redColor()
+        refreshView.frame = CGRect(x: 0, y: 0, width: 375, height: 60)
+        refreshControl?.addSubview(refreshView)
+        refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
+        //        refreshControl?.endRefreshing()
+        */
+        
+        refreshControl = HomeRefreshControl()
+
         // 4.加载微博数据
         loadData()
     }

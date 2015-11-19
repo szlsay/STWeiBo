@@ -47,6 +47,8 @@
 		77E071B81BF73753005BC40E /* QRCodeCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E071B71BF73753005BC40E /* QRCodeCardViewController.swift */; };
 		77F367681BFDC71A007CC36B /* StatusForwardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F367671BFDC71A007CC36B /* StatusForwardTableViewCell.swift */; };
 		77F3676A1BFDC7DB007CC36B /* StatusNormalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F367691BFDC7DB007CC36B /* StatusNormalTableViewCell.swift */; };
+		77F3676D1BFDCD04007CC36B /* HomeRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F3676B1BFDCD04007CC36B /* HomeRefreshView.xib */; };
+		77F3676E1BFDCD04007CC36B /* HomeRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F3676C1BFDCD04007CC36B /* HomeRefreshControl.swift */; };
 		7FB1F4904BCEF7445FBBD93B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7955617030BC9C6EC0DC4D51 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -115,6 +117,8 @@
 		77E071B71BF73753005BC40E /* QRCodeCardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeCardViewController.swift; sourceTree = "<group>"; };
 		77F367671BFDC71A007CC36B /* StatusForwardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusForwardTableViewCell.swift; sourceTree = "<group>"; };
 		77F367691BFDC7DB007CC36B /* StatusNormalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusNormalTableViewCell.swift; sourceTree = "<group>"; };
+		77F3676B1BFDCD04007CC36B /* HomeRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeRefreshView.xib; sourceTree = "<group>"; };
+		77F3676C1BFDCD04007CC36B /* HomeRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRefreshControl.swift; sourceTree = "<group>"; };
 		7955617030BC9C6EC0DC4D51 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E4ED4D5A9F27BA299AC3B3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -255,6 +259,8 @@
 				77E071AE1BF72E23005BC40E /* QRCode */,
 				77E071A51BF72701005BC40E /* Popover */,
 				77E071891BF6E8C6005BC40E /* HomeTableViewController.swift */,
+				77F3676B1BFDCD04007CC36B /* HomeRefreshView.xib */,
+				77F3676C1BFDCD04007CC36B /* HomeRefreshControl.swift */,
 				774AC2FA1BFABE7E000363D1 /* StatusTableViewCell.swift */,
 				77F367691BFDC7DB007CC36B /* StatusNormalTableViewCell.swift */,
 				77F367671BFDC71A007CC36B /* StatusForwardTableViewCell.swift */,
@@ -464,6 +470,7 @@
 			files = (
 				77E071AA1BF72701005BC40E /* PopoverViewController.storyboard in Resources */,
 				77E071991BF6ED61005BC40E /* MainVCSettings.json in Resources */,
+				77F3676D1BFDCD04007CC36B /* HomeRefreshView.xib in Resources */,
 				77E0715E1BF6E804005BC40E /* Assets.xcassets in Resources */,
 				77E071B51BF72FE0005BC40E /* QRCodeViewController.storyboard in Resources */,
 			);
@@ -556,6 +563,7 @@
 				77E071B81BF73753005BC40E /* QRCodeCardViewController.swift in Sources */,
 				77E071911BF6E8C6005BC40E /* DiscoverTableViewController.swift in Sources */,
 				77F367681BFDC71A007CC36B /* StatusForwardTableViewCell.swift in Sources */,
+				77F3676E1BFDCD04007CC36B /* HomeRefreshControl.swift in Sources */,
 				773A7F251BFAC79A002D3061 /* UILabel+Category.swift in Sources */,
 				774AC2F71BFAB740000363D1 /* Status.swift in Sources */,
 				77E071571BF6E804005BC40E /* AppDelegate.swift in Sources */,
