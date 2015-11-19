@@ -38,11 +38,11 @@ class HomeTableViewController: BaseTableViewController{
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "change", name: STPopoverAnimatorWilldismiss, object: nil)
         
         // 注册一个cell
-        tableView.registerClass(StatusTableViewCell.self, forCellReuseIdentifier: STHomeReuseIdentifier)
+        tableView.registerClass(StatusNormalTableViewCell.self, forCellReuseIdentifier: STHomeReuseIdentifier)
         
 //        tableView.rowHeight = 200
-        tableView.estimatedRowHeight = 200
-        tableView.rowHeight = 300
+//        tableView.estimatedRowHeight = 200
+//        tableView.rowHeight = 300
 //        tableView.rowHeight = UITableViewAutomaticDimension
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         

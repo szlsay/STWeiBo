@@ -16,6 +16,8 @@ class StatusTableViewCell: UITableViewCell {
     var pictureWidthCons: NSLayoutConstraint?
     /// 保存配图的高度约束
     var pictureHeightCons: NSLayoutConstraint?
+    /// 保存配图的顶部约束
+    var pictureTopCons: NSLayoutConstraint?
     
     var status: Status?
         {
@@ -35,7 +37,7 @@ class StatusTableViewCell: UITableViewCell {
             // 1.2设置配图的尺寸
             pictureWidthCons?.constant = size.width
             pictureHeightCons?.constant = size.height
-            
+            pictureTopCons?.constant = size.height == 0 ? 0 : 10
         }
     }
     
@@ -47,7 +49,7 @@ class StatusTableViewCell: UITableViewCell {
         setupUI()
     }
     
-    private func setupUI()
+    func setupUI()
     {
         // 1.添加子控件
         contentView.addSubview(topView)
@@ -60,11 +62,6 @@ class StatusTableViewCell: UITableViewCell {
         topView.ST_AlignInner(type: ST_AlignType.TopLeft, referView: contentView, size: CGSize(width: width, height: 60))
         
         contentLabel.ST_AlignVertical(type: ST_AlignType.BottomLeft, referView: topView, size: nil, offset: CGPoint(x: 10, y: 10))
-        
-        let cons = pictureView.ST_AlignVertical(type: ST_AlignType.BottomLeft, referView: contentLabel, size: CGSizeZero, offset: CGPoint(x: 0, y: 10))
-        
-        pictureWidthCons = pictureView.ST_Constraint(cons, attribute: NSLayoutAttribute.Width)
-        pictureHeightCons =  pictureView.ST_Constraint(cons, attribute: NSLayoutAttribute.Height)
         
         footerView.ST_AlignVertical(type: ST_AlignType.BottomLeft, referView: pictureView, size: CGSize(width: width, height: 44), offset: CGPoint(x: -10, y: 10))
         
@@ -90,7 +87,7 @@ class StatusTableViewCell: UITableViewCell {
     private lazy var topView: StatusTableViewTopView = StatusTableViewTopView()
     
     /// 正文
-    private lazy var contentLabel: UILabel =
+    lazy var contentLabel: UILabel =
     {
         let label = UILabel.createLabel(UIColor.darkGrayColor(), fontSize: 15)
         label.numberOfLines = 0
@@ -99,10 +96,10 @@ class StatusTableViewCell: UITableViewCell {
     }()
     
     /// 配图
-    private lazy var pictureView: StatusPictureView = StatusPictureView()
+    lazy var pictureView: StatusPictureView = StatusPictureView()
     
     /// 底部工具条
-    private lazy var footerView: StatusTableViewBottomView = StatusTableViewBottomView()
+    lazy var footerView: StatusTableViewBottomView = StatusTableViewBottomView()
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
