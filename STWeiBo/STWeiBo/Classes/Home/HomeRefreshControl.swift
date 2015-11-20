@@ -9,13 +9,13 @@
 import UIKit
 
 class HomeRefreshControl: UIRefreshControl {
-
+    
     override init() {
         super.init()
         
         setupUI()
     }
-
+    
     private func setupUI()
     {
         // 1.添加子控件
@@ -33,10 +33,8 @@ class HomeRefreshControl: UIRefreshControl {
         越往下拉: 值就越小
         越往上推: 值就越大
         */
-
         addObserver(self, forKeyPath: "frame", options: NSKeyValueObservingOptions.New, context: nil)
     }
-    
     
     /// 定义变量记录是否需要旋转监听
     private var rotationArrowFlag = false
@@ -86,6 +84,7 @@ class HomeRefreshControl: UIRefreshControl {
     
     // MARK: - 懒加载
     private lazy var refreshView : HomeRefreshView =  HomeRefreshView.refreshView()
+    
     
     deinit
     {

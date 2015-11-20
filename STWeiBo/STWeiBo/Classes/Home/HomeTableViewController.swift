@@ -8,8 +8,10 @@
 import UIKit
 
 
+
 let STHomeReuseIdentifier = "STHomeReuseIdentifier"
-class HomeTableViewController: BaseTableViewController{
+class HomeTableViewController: BaseTableViewController {
+    
     /// 保存微博数组
     var statuses: [Status]?
         {
@@ -18,7 +20,6 @@ class HomeTableViewController: BaseTableViewController{
             tableView.reloadData()
         }
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,27 +38,17 @@ class HomeTableViewController: BaseTableViewController{
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "change", name: STPopoverAnimatorWillShow, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "change", name: STPopoverAnimatorWilldismiss, object: nil)
         
-        // 注册一个cell
+        // 注册两个cell
         tableView.registerClass(StatusNormalTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.NormalCell.rawValue)
         tableView.registerClass(StatusForwardTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.ForwardCell.rawValue)
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         
         
         // 4.添加下拉刷新控件
-        /*
-        refreshControl = UIRefreshControl()
-        let refreshView = UIView()
-        refreshView.backgroundColor = UIColor.redColor()
-        refreshView.frame = CGRect(x: 0, y: 0, width: 375, height: 60)
-        refreshControl?.addSubview(refreshView)
-        refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
-        //        refreshControl?.endRefreshing()
-        */
-        
         refreshControl = HomeRefreshControl()
         refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
-
-
+        
+        
         // 4.加载微博数据
         loadData()
     }
@@ -66,11 +57,14 @@ class HomeTableViewController: BaseTableViewController{
         // 移除通知
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
-
+    
     /**
      获取微博数据
+     如果想调用一个私有的方法:
+     1.去掉private
+     2.@objc, 当做OC方法来处理
      */
-    @objc func loadData()
+    @objc private func loadData()
     {
         /*
         1.默认最新返回20条数据
@@ -96,30 +90,67 @@ class HomeTableViewController: BaseTableViewController{
         5
         
         */
+        
+        
         let since_id = statuses?.first?.id ?? 0
         
+        print("\(__FUNCTION__) \(since_id)")
+        
         Status.loadStatuses(since_id) { (models, error) -> () in
-            
+            print("\(__FUNCTION__) \"00")
             // 接收刷新
             self.refreshControl?.endRefreshing()
-            
+            print("\(__FUNCTION__) \"01")
             if error != nil
             {
                 return
             }
+            
+            print("\(__FUNCTION__) \"02")
             // 下拉刷新
             if since_id > 0
             {
                 // 如果是下拉刷新, 就将获取到的数据, 拼接在原有数据的前面
                 self.statuses = models! + self.statuses!
+                print("\(__FUNCTION__) \"03")
+                // 显示刷新提醒
+                self.showNewStatusCount(models?.count ?? 0)
             }else
             {
                 self.statuses = models
             }
         }
     }
-
-
+    
+    private func showNewStatusCount(count : Int)
+    {
+        newStatusLabel.hidden = false
+        newStatusLabel.text = (count == 0) ? "没有刷新到新的微博数据" : "刷新到\(count)条微博数据"
+        /*
+        // 1.记录提醒控件的frame
+        let rect = newStatusLabel.frame
+        // 2.执行动画
+        UIView.animateWithDuration(2, animations: { () -> Void in
+        
+        UIView.setAnimationRepeatAutoreverses(true)
+        self.newStatusLabel.frame = CGRectOffset(rect, 0, 3 * rect.height)
+        
+        }) { (_) -> Void in
+        self.newStatusLabel.frame = rect
+        }
+        */
+        
+        UIView.animateWithDuration(2, animations: { () -> Void in
+            self.newStatusLabel.transform = CGAffineTransformMakeTranslation(0, self.newStatusLabel.frame.height)
+            print("\(__FUNCTION__) \(self.newStatusLabel.frame.height)")
+            }) { (_) -> Void in
+                UIView.animateWithDuration(2, animations: { () -> Void in
+                    self.newStatusLabel.transform = CGAffineTransformIdentity
+                    }, completion: { (_) -> Void in
+                        self.newStatusLabel.hidden = true
+                })
+        }
+    }
     
     /**
      修改标题按钮的状态
@@ -141,23 +172,17 @@ class HomeTableViewController: BaseTableViewController{
         
         // 2.初始化标题按钮
         let titleBtn = TitleButton()
-        titleBtn.setTitle("小沈微博 ", forState: UIControlState.Normal)
+        titleBtn.setTitle("极客江南 ", forState: UIControlState.Normal)
         titleBtn.addTarget(self, action: "titleBtnClick:", forControlEvents: UIControlEvents.TouchUpInside)
         navigationItem.titleView = titleBtn
     }
     
     func titleBtnClick(btn: TitleButton)
     {
-        // 1.修改箭头方向
-        //        btn.selected = !btn.selected
-        
         // 2.弹出菜单
         let sb = UIStoryboard(name: "PopoverViewController", bundle: nil)
         let vc = sb.instantiateInitialViewController()
         // 2.1设置转场代理
-        // 默认情况下modal会移除以前控制器的view, 替换为当前弹出的view
-        // 如果自定义转场, 那么就不会移除以前控制器的view
-        //        vc?.transitioningDelegate = self
         vc?.transitioningDelegate = popverAnimator
         
         // 2.2设置转场的样式
@@ -174,7 +199,6 @@ class HomeTableViewController: BaseTableViewController{
     
     func rightItemClick()
     {
-//        print(__FUNCTION__)
         let sb = UIStoryboard(name: "QRCodeViewController", bundle: nil)
         let vc = sb.instantiateInitialViewController()
         presentViewController(vc!, animated: true, completion: nil)
@@ -188,6 +212,26 @@ class HomeTableViewController: BaseTableViewController{
         return pa
     }()
     
+    /// 刷新提醒控件
+    private lazy var newStatusLabel: UILabel =
+    {
+        let label = UILabel()
+        let height: CGFloat = 44
+        //        label.frame =  CGRect(x: 0, y: -2 * height, width: UIScreen.mainScreen().bounds.width, height: height)
+        label.frame =  CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: height)
+        
+        label.backgroundColor = UIColor.orangeColor()
+        label.textColor = UIColor.whiteColor()
+        label.textAlignment = NSTextAlignment.Center
+        
+        // 加载 navBar 上面，不会随着 tableView 一起滚动
+        self.navigationController?.navigationBar.insertSubview(label, atIndex: 0)
+        
+        label.hidden = true
+        return label
+    }()
+    
+    
     /// 微博行高的缓存, 利用字典作为容器. key就是微博的id, 值就是对应微博的行高
     var rowCache: [Int: CGFloat] = [Int: CGFloat]()
     
@@ -195,9 +239,7 @@ class HomeTableViewController: BaseTableViewController{
         // 清空缓存
         rowCache.removeAll()
     }
-
 }
-
 
 extension HomeTableViewController
 {
@@ -207,16 +249,17 @@ extension HomeTableViewController
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        // 2.设置数据
         let status = statuses![indexPath.row]
         // 1.获取cell
         let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(status), forIndexPath: indexPath) as! StatusTableViewCell
-        
-//        cell.textLabel?.text = status.text
+        // 2.设置数据
         cell.status = status
+        
         // 3.返回cell
         return cell
     }
+    
+    
     // 返回行高
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         // 1.取出对应行的模型
@@ -225,25 +268,19 @@ extension HomeTableViewController
         // 2.判断缓存中有没有
         if let height = rowCache[status.id]
         {
-//            print("从缓存中获取")
             return height
         }
         
         // 3.拿到cell
-       let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(status)) as! StatusTableViewCell
-        // 注意点:不要使用以下方法获取, 在某些版本或者模拟器会有bug
-        //        tableView.dequeueReusableCellWithIdentifier(<#T##identifier: String##String#>, forIndexPath: <#T##NSIndexPath#>)
+        let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(status)) as! StatusTableViewCell
         
         // 4.拿到对应行的行高
         let rowHeight = cell.rowHeight(status)
         
         // 5.缓存行高
         rowCache[status.id] = rowHeight
-//        print("重新计算")
         
         // 6.返回行高
         return rowHeight
     }
 }
-
-
