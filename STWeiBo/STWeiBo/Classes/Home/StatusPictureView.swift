@@ -28,6 +28,8 @@ class StatusPictureView: UICollectionView {
         
         // 2.设置数据源
         dataSource = self
+        delegate = self
+        
         
         // 2.设置cell之间的间隙
         pictureLayout.minimumInteritemSpacing = 10
@@ -124,7 +126,7 @@ class StatusPictureView: UICollectionView {
 }
 
 
-extension StatusPictureView: UICollectionViewDataSource
+extension StatusPictureView: UICollectionViewDataSource , UICollectionViewDelegate
 {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return status?.storedPicURLS?.count ?? 0
@@ -140,5 +142,11 @@ extension StatusPictureView: UICollectionViewDataSource
         // 3.返回cell
         return cell
     }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        //        print(indexPath.item)
+        print(status?.storedLargePicURLS![indexPath.item])
+    }
+
 
 }
