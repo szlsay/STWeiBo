@@ -64,6 +64,10 @@ class HomeTableViewController: BaseTableViewController {
      1.去掉private
      2.@objc, 当做OC方法来处理
      */
+    
+     /// 定义变量记录当前是上拉还是下拉
+    var pullupRefreshFlag = false
+    
     @objc private func loadData()
     {
         /*
@@ -92,30 +96,38 @@ class HomeTableViewController: BaseTableViewController {
         */
         
         
-        let since_id = statuses?.first?.id ?? 0
+        var since_id = statuses?.first?.id ?? 0
         
-        print("\(__FUNCTION__) \(since_id)")
+        var max_id = 0
+        // 2.判断是否是上拉
+        if pullupRefreshFlag
+        {
+            since_id = 0
+            max_id = statuses?.last?.id ?? 0
+        }
         
         Status.loadStatuses(since_id) { (models, error) -> () in
-            print("\(__FUNCTION__) \"00")
             // 接收刷新
             self.refreshControl?.endRefreshing()
-            print("\(__FUNCTION__) \"01")
             if error != nil
             {
                 return
             }
             
-            print("\(__FUNCTION__) \"02")
             // 下拉刷新
             if since_id > 0
             {
                 // 如果是下拉刷新, 就将获取到的数据, 拼接在原有数据的前面
                 self.statuses = models! + self.statuses!
-                print("\(__FUNCTION__) \"03")
+                
                 // 显示刷新提醒
                 self.showNewStatusCount(models?.count ?? 0)
-            }else
+            }else if max_id > 0
+            {
+                // 如果是上拉加载更多, 就将获取到的数据, 拼接在原有数据的后面
+                self.statuses = self.statuses! + models!
+            }
+            else
             {
                 self.statuses = models
             }
@@ -254,6 +266,16 @@ extension HomeTableViewController
         let cell = tableView.dequeueReusableCellWithIdentifier(StatusTableViewCellIdentifier.cellID(status), forIndexPath: indexPath) as! StatusTableViewCell
         // 2.设置数据
         cell.status = status
+        
+        // 4.判断是否滚动到了最后一个cell
+        let count = statuses?.count ?? 0
+        if indexPath.row == (count - 1)
+        {
+            pullupRefreshFlag = true
+            //            print("上拉加载更多")
+            loadData()
+        }
+
         
         // 3.返回cell
         return cell
