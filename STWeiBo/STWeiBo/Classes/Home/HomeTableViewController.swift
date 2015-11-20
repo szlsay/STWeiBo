@@ -37,6 +37,7 @@ class HomeTableViewController: BaseTableViewController {
         // 3.注册通知, 监听菜单
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "change", name: STPopoverAnimatorWillShow, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "change", name: STPopoverAnimatorWilldismiss, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "showPhotoBrowser:", name: STStatusPictureViewSelected, object: nil)
         
         // 注册两个cell
         tableView.registerClass(StatusNormalTableViewCell.self, forCellReuseIdentifier: StatusTableViewCellIdentifier.NormalCell.rawValue)
@@ -52,12 +53,40 @@ class HomeTableViewController: BaseTableViewController {
         // 4.加载微博数据
         loadData()
     }
+    
+    /**
+     显示图片浏览器
+     */
+    func showPhotoBrowser(notify: NSNotification)
+    {
+        //        print(notify.userInfo)
+        // 注意: 如果通过通知传递数据, 一定要判断数据是否存在
+        guard let indexPath = notify.userInfo![STStatusPictureViewIndexKey] as? NSIndexPath else
+        {
+            print("没有indexPath")
+            return
+        }
+        
+        guard let urls = notify.userInfo![STStatusPictureViewURLsKey] as? [NSURL] else
+        {
+            print("没有配图")
+            return
+        }
+        
+        // 1.创建图片浏览器
+        let vc = PhotoBrowserController(index: indexPath.item, urls: urls)
+        
+        // 2.显示图片浏览器
+        presentViewController(vc, animated: true, completion: nil)
+    }
+    
     deinit
     {
         // 移除通知
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
-    
+
+
     /**
      获取微博数据
      如果想调用一个私有的方法:
