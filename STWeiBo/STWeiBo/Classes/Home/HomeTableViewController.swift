@@ -55,6 +55,8 @@ class HomeTableViewController: BaseTableViewController{
         */
         
         refreshControl = HomeRefreshControl()
+        refreshControl?.addTarget(self, action: "loadData", forControlEvents: UIControlEvents.ValueChanged)
+
 
         // 4.加载微博数据
         loadData()
@@ -68,17 +70,55 @@ class HomeTableViewController: BaseTableViewController{
     /**
      获取微博数据
      */
-    private func loadData()
+    @objc func loadData()
     {
-        Status.loadStatuses { (models, error) -> () in
+        /*
+        1.默认最新返回20条数据
+        2.since_id : 会返回比since_id大的微博
+        3.max_id: 会返回小于等于max_id的微博
+        
+        每条微博都有一个微博ID, 而且微博ID越后面发送的微博, 它的微博ID越大
+        递增
+        
+        新浪返回给我们的微博数据, 是从大到小的返回给我们的
+        
+        15
+        14
+        13
+        12
+        11
+        
+        10
+        9
+        8
+        7
+        6
+        5
+        
+        */
+        let since_id = statuses?.first?.id ?? 0
+        
+        Status.loadStatuses(since_id) { (models, error) -> () in
+            
+            // 接收刷新
+            self.refreshControl?.endRefreshing()
             
             if error != nil
             {
                 return
             }
-            self.statuses = models
+            // 下拉刷新
+            if since_id > 0
+            {
+                // 如果是下拉刷新, 就将获取到的数据, 拼接在原有数据的前面
+                self.statuses = models! + self.statuses!
+            }else
+            {
+                self.statuses = models
+            }
         }
     }
+
 
     
     /**
@@ -185,7 +225,7 @@ extension HomeTableViewController
         // 2.判断缓存中有没有
         if let height = rowCache[status.id]
         {
-            print("从缓存中获取")
+//            print("从缓存中获取")
             return height
         }
         
@@ -199,7 +239,7 @@ extension HomeTableViewController
         
         // 5.缓存行高
         rowCache[status.id] = rowHeight
-        print("重新计算")
+//        print("重新计算")
         
         // 6.返回行高
         return rowHeight

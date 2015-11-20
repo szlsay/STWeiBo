@@ -10,6 +10,19 @@ import UIKit
 
 class StatusForwardTableViewCell: StatusTableViewCell {
 
+    // 重写父类属性的didSet并不会覆盖父类的操作
+    // 只需要在重写方法中, 做自己想做的事即可
+    // 注意点: 如果父类是didSet, 那么子类重写也只能重写didSet
+    override var status: Status?
+        {
+        didSet{
+            let name = status?.retweeted_status?.user?.name ?? ""
+            let text = status?.retweeted_status?.text ?? ""
+            forwardLabel.text = name + ": " + text
+        }
+    }
+
+    
     override func setupUI() {
         super.setupUI()
         

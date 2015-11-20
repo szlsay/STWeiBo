@@ -50,7 +50,8 @@ class StatusTableViewCell: UITableViewCell {
             contentLabel.text = status?.text
             
             // 设置配图的尺寸
-            pictureView.status = status
+            pictureView.status = status?.retweeted_status != nil ? status?.retweeted_status : status
+            
             // 1.1根据模型计算配图的尺寸
             // 注意: 计算尺寸需要用到模型, 所以必须先传递模型
             let size = pictureView.calculateImageSize()

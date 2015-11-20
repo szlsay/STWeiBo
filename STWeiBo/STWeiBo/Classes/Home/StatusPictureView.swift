@@ -57,6 +57,8 @@ class StatusPictureView: UICollectionView {
             let key = status?.storedPicURLS!.first?.absoluteString
             let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(key!)
             
+            
+            print("\(__FUNCTION__) \(image.size)")
             pictureLayout.itemSize = image.size
             // 3.2返回缓存图片的尺寸
             return image.size
