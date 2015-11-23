@@ -83,7 +83,7 @@ class PhotoBrowserController: UIViewController {
     private lazy var collectionView: UICollectionView = UICollectionView(frame: CGRectZero, collectionViewLayout: PhotoBrowserLayout())
 }
 
-extension PhotoBrowserController : UICollectionViewDataSource
+extension PhotoBrowserController : UICollectionViewDataSource,PhotoBrowserCellDelegate
 {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return pictureURLs?.count ?? 0
@@ -95,8 +95,13 @@ extension PhotoBrowserController : UICollectionViewDataSource
         
         cell.backgroundColor = UIColor.randomColor()
         cell.imageURL = pictureURLs![indexPath.item]
+        cell.photoBrowserCellDelegate = self
         
         return cell
+    }
+    
+    func photoBrowserCellDidClose(cell: PhotoBrowserCell) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
 

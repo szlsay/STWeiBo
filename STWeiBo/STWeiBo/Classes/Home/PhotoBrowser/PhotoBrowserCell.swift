@@ -9,8 +9,13 @@
 import UIKit
 import SDWebImage
 
-class PhotoBrowserCell: UICollectionViewCell {
+protocol PhotoBrowserCellDelegate : NSObjectProtocol
+{
+    func photoBrowserCellDidClose(cell: PhotoBrowserCell)
+}
 
+class PhotoBrowserCell: UICollectionViewCell {
+    weak var photoBrowserCellDelegate : PhotoBrowserCellDelegate?
     var imageURL: NSURL?
         {
         didSet{
@@ -106,7 +111,23 @@ class PhotoBrowserCell: UICollectionViewCell {
         scrollview.maximumZoomScale = 2.0
         scrollview.minimumZoomScale = 0.5
         
+        // 4.监听图片的点击
+        let tap = UITapGestureRecognizer(target: self, action: "close")
+        iconView.addGestureRecognizer(tap)
+        iconView.userInteractionEnabled = true
+        
+        
     }
+    
+    /**
+     关闭浏览器
+     */
+    func close()
+    {
+        print("close")
+        photoBrowserCellDelegate?.photoBrowserCellDidClose(self)
+    }
+
     
     // MARK: - 懒加载
     private lazy var scrollview: UIScrollView = UIScrollView()
