@@ -14,18 +14,18 @@ class PhotoBrowserCell: UICollectionViewCell {
     var imageURL: NSURL?
         {
         didSet{
-//            iconView.sd_setImageWithURL(imageURL)
+            // 1.重置属性
+            reset()
             
-            print("\(__FUNCTION__) \(imageURL)")
+            // 2.显示菊花
+            activity.startAnimating()
+            
+            // 3.设置图片
             iconView.sd_setImageWithURL(imageURL) { (image, _, _, _) -> Void in
-                /*
-                1.图片显示不完整
-                2.图片没有居中显示
-                3.长图显示也会有一些问题
-                */
-//                self.iconView.frame = CGRect(origin: CGPointZero, size: image.size)
-//                let size = self.displaySize(image)
-//                self.iconView.frame = CGRect(origin: CGPointZero, size: size)
+                // 4.隐藏菊花
+                self.activity.stopAnimating()
+                
+                // 5.调整图片的尺寸和位置
                 self.setImageViewPostion()
                 
             }
@@ -95,9 +95,11 @@ class PhotoBrowserCell: UICollectionViewCell {
         // 1.添加子控件
         contentView.addSubview(scrollview)
         scrollview.addSubview(iconView)
+        contentView.addSubview(activity)
         
         // 2.布局子控件
         scrollview.frame = UIScreen.mainScreen().bounds
+        activity.center = contentView.center
         
         // 3.处理缩放
         scrollview.delegate = self
@@ -109,6 +111,7 @@ class PhotoBrowserCell: UICollectionViewCell {
     // MARK: - 懒加载
     private lazy var scrollview: UIScrollView = UIScrollView()
     private lazy var iconView: UIImageView = UIImageView()
+     private lazy var activity: UIActivityIndicatorView =  UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
