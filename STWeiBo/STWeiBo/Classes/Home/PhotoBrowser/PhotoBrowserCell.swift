@@ -33,6 +33,21 @@ class PhotoBrowserCell: UICollectionViewCell {
     }
     
     /**
+     重置scrollview和imageview的属性
+     */
+    private func reset()
+    {
+        // 重置scrollview
+        scrollview.contentInset = UIEdgeInsetsZero
+        scrollview.contentOffset = CGPointZero
+        scrollview.contentSize = CGSizeZero
+        
+        // 重置imageview
+        iconView.transform = CGAffineTransformIdentity
+    }
+
+    
+    /**
      调整图片显示的位置
      */
     private func setImageViewPostion()
@@ -84,6 +99,11 @@ class PhotoBrowserCell: UICollectionViewCell {
         // 2.布局子控件
         scrollview.frame = UIScreen.mainScreen().bounds
         
+        // 3.处理缩放
+        scrollview.delegate = self
+        scrollview.maximumZoomScale = 2.0
+        scrollview.minimumZoomScale = 0.5
+        
     }
     
     // MARK: - 懒加载
@@ -92,5 +112,32 @@ class PhotoBrowserCell: UICollectionViewCell {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension PhotoBrowserCell: UIScrollViewDelegate
+{
+    // 告诉系统需要缩放哪个控件
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView?
+    {
+        return iconView
+    }
+    
+    // 重新调整配图的位置
+    // view: 被缩放的视图
+    func scrollViewDidEndZooming(scrollView: UIScrollView, withView view: UIView?, atScale scale: CGFloat) {
+        print("scrollViewDidEndZooming")
+        
+        // 注意: 缩放的本质是修改transfrom, 而修改transfrom不会影响到bounds, 只有frame会受到影响
+        //        print(view?.bounds)
+        //        print(view?.frame)
+        
+        var offsetX = (UIScreen.mainScreen().bounds.width - view!.frame.width) * 0.5
+        var offsetY = (UIScreen.mainScreen().bounds.height - view!.frame.height) * 0.5
+        //        print("offsetX = \(offsetX), offsetY = \(offsetY)")
+        offsetX = offsetX < 0 ? 0 : offsetX
+        offsetY = offsetY < 0 ? 0 : offsetY
+        
+        scrollView.contentInset = UIEdgeInsets(top: offsetY, left: offsetX, bottom: offsetY, right: offsetX)
     }
 }
