@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 private let photoBrowserCellReuseIdentifier = "pictureCell"
 class PhotoBrowserController: UIViewController {
@@ -56,8 +57,25 @@ class PhotoBrowserController: UIViewController {
     }
     func save()
     {
-        print(__FUNCTION__)
+        // 1.拿到当前正在显示的cell
+        let index = collectionView.indexPathsForVisibleItems().last!
+        let cell = collectionView.cellForItemAtIndexPath(index) as! PhotoBrowserCell
+        // 2.保存图片
+        let image = cell.iconView.image
+        UIImageWriteToSavedPhotosAlbum(image!, self, "image:didFinishSavingWithError:contextInfo:", nil)
+        
+        // - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
     }
+    func image(image:UIImage, didFinishSavingWithError error:NSError?, contextInfo:AnyObject){
+        if error != nil
+        {
+            SVProgressHUD.showErrorWithStatus("保存失败", maskType: SVProgressHUDMaskType.Black)
+        }else
+        {
+            SVProgressHUD.showSuccessWithStatus("保存成功", maskType: SVProgressHUDMaskType.Black)
+        }
+    }
+
     
     // MARK: - 懒加载
     private lazy var closeBtn: UIButton = {
