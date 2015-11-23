@@ -22,6 +22,7 @@
 		774AC2F71BFAB740000363D1 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774AC2F61BFAB740000363D1 /* Status.swift */; };
 		774AC2F91BFABAF0000363D1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774AC2F81BFABAF0000363D1 /* User.swift */; };
 		774AC2FB1BFABE7E000363D1 /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 774AC2FA1BFABE7E000363D1 /* StatusTableViewCell.swift */; };
+		77B53A741C02A0B200C0FD1E /* UIColor+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B53A731C02A0B200C0FD1E /* UIColor+Category.swift */; };
 		77E071571BF6E804005BC40E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E071561BF6E804005BC40E /* AppDelegate.swift */; };
 		77E0715E1BF6E804005BC40E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77E0715D1BF6E804005BC40E /* Assets.xcassets */; };
 		77E0716C1BF6E805005BC40E /* STWeiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77E0716B1BF6E805005BC40E /* STWeiBoTests.swift */; };
@@ -50,6 +51,7 @@
 		77F3676D1BFDCD04007CC36B /* HomeRefreshView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77F3676B1BFDCD04007CC36B /* HomeRefreshView.xib */; };
 		77F3676E1BFDCD04007CC36B /* HomeRefreshControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F3676C1BFDCD04007CC36B /* HomeRefreshControl.swift */; };
 		77FAB4DC1BFF075E0098B3F6 /* PhotoBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FAB4DB1BFF075E0098B3F6 /* PhotoBrowserController.swift */; };
+		77FAB4DE1BFF0A360098B3F6 /* PhotoBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77FAB4DD1BFF0A360098B3F6 /* PhotoBrowserCell.swift */; };
 		7FB1F4904BCEF7445FBBD93B /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7955617030BC9C6EC0DC4D51 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +89,7 @@
 		774AC2F61BFAB740000363D1 /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		774AC2F81BFABAF0000363D1 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		774AC2FA1BFABE7E000363D1 /* StatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
+		77B53A731C02A0B200C0FD1E /* UIColor+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Category.swift"; sourceTree = "<group>"; };
 		77E071531BF6E804005BC40E /* STWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77E071561BF6E804005BC40E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77E0715D1BF6E804005BC40E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,6 +124,7 @@
 		77F3676B1BFDCD04007CC36B /* HomeRefreshView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeRefreshView.xib; sourceTree = "<group>"; };
 		77F3676C1BFDCD04007CC36B /* HomeRefreshControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRefreshControl.swift; sourceTree = "<group>"; };
 		77FAB4DB1BFF075E0098B3F6 /* PhotoBrowserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserController.swift; sourceTree = "<group>"; };
+		77FAB4DD1BFF0A360098B3F6 /* PhotoBrowserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowserCell.swift; sourceTree = "<group>"; };
 		7955617030BC9C6EC0DC4D51 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5E4ED4D5A9F27BA299AC3B3 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -306,6 +310,7 @@
 		77E071901BF6E8C6005BC40E /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				77B53A731C02A0B200C0FD1E /* UIColor+Category.swift */,
 				77E0719B1BF6F114005BC40E /* UIView+AutoLayout.swift */,
 				771144651BF97FE200665541 /* NetworkTools.swift */,
 				771144691BF9990E00665541 /* String+Category.swift */,
@@ -348,6 +353,7 @@
 			isa = PBXGroup;
 			children = (
 				77FAB4DB1BFF075E0098B3F6 /* PhotoBrowserController.swift */,
+				77FAB4DD1BFF0A360098B3F6 /* PhotoBrowserCell.swift */,
 			);
 			path = PhotoBrowser;
 			sourceTree = "<group>";
@@ -563,6 +569,8 @@
 				77F3676A1BFDC7DB007CC36B /* StatusNormalTableViewCell.swift in Sources */,
 				77E071AB1BF72701005BC40E /* PopoverViewController.swift in Sources */,
 				771144681BF981D900665541 /* UserAccount.swift in Sources */,
+				77B53A741C02A0B200C0FD1E /* UIColor+Category.swift in Sources */,
+				77FAB4DE1BFF0A360098B3F6 /* PhotoBrowserCell.swift in Sources */,
 				773A7F2D1BFAE65E002D3061 /* StatusTableViewTopView.swift in Sources */,
 				7711446F1BF9B9F400665541 /* WelcomeViewController.swift in Sources */,
 				77E071951BF6E8C6005BC40E /* ProfileTableViewController.swift in Sources */,
