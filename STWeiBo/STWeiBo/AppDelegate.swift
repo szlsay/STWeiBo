@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     
-    func setupStartUI () {
+    private func setupStartUI () {
         
         print(UserAccount.loadAccount()?.expires_Date)
         

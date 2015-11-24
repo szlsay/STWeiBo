@@ -20,4 +20,11 @@ extension UILabel{
         label.font = UIFont.systemFontOfSize(fontSize)
         return label
     }
+    
+    convenience init(color: UIColor, fontSize: CGFloat){
+        self.init()
+        textColor = color
+        font = UIFont.systemFontOfSize(fontSize)
+    }
+
 }

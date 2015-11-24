@@ -19,4 +19,30 @@ extension UIBarButtonItem{
         btn.sizeToFit()
         return UIBarButtonItem(customView: btn)
     }
+    
+    ///  创建 UIBarButtonItem
+    ///
+    ///  :param: imageName            图像名
+    ///  :param: highlightedImageName 高亮名，可以为 nil
+    ///  :param: target               target
+    ///  :param: actionName           actionName
+    convenience init(imageName: String, highlightedImageName: String?, target: AnyObject?, actionName: String?) {
+        
+        let btn = UIButton()
+        
+        btn.setImage(UIImage(named: imageName), forState: UIControlState.Normal);
+        
+        let hImageName = highlightedImageName ?? imageName + "_highlighted"
+        btn.setImage(UIImage(named: hImageName), forState: UIControlState.Highlighted)
+        
+        btn.sizeToFit()
+        
+        // 添加监听方法
+        if actionName != nil {
+            btn.addTarget(target, action: Selector(actionName!), forControlEvents: UIControlEvents.TouchUpInside)
+        }
+        
+        self.init(customView: btn)
+    }
+
 }

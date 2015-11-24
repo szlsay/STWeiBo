@@ -27,6 +27,9 @@ class UserAccount: NSObject , NSCoding{
 /// 当前授权用户的UID。
     var uid:String?
     
+/// 友好显示名称
+    var name: String?
+    
 /// 用户头像地址（大图），180×180像素
     var avatar_large: String?
 
@@ -50,14 +53,14 @@ class UserAccount: NSObject , NSCoding{
     }
 
     
-    override var description: String{
-        // 1.定义属性数组
-        let properties = ["access_token", "expires_in", "uid", "expires_Date", "avatar_large", "screen_name"]
-        // 2.根据属性数组, 将属性转换为字典
-        let dict =  self.dictionaryWithValuesForKeys(properties)
-        // 3.将字典转换为字符串
-        return "\(dict)"
-    }
+//    override var description: String{
+//        // 1.定义属性数组
+//        let properties = ["access_token", "expires_in", "uid", "expires_Date", "avatar_large", "screen_name"]
+//        // 2.根据属性数组, 将属性转换为字典
+//        let dict =  self.dictionaryWithValuesForKeys(properties)
+//        // 3.将字典转换为字符串
+//        return "\(dict)"
+//    }
     
     func loadUserInfo(finished: (account: UserAccount?, error:NSError?)->())
     {
@@ -139,6 +142,7 @@ class UserAccount: NSObject , NSCoding{
         aCoder.encodeObject(expires_Date, forKey: "expires_Date")
         aCoder.encodeObject(screen_name, forKey: "screen_name")
         aCoder.encodeObject(avatar_large, forKey: "avatar_large")
+         aCoder.encodeObject(name, forKey: "name")
     }
     
     // 从文件中读取对象
@@ -149,6 +153,15 @@ class UserAccount: NSObject , NSCoding{
         expires_Date = aDecoder.decodeObjectForKey("expires_Date") as? NSDate
         screen_name = aDecoder.decodeObjectForKey("screen_name")  as? String
         avatar_large = aDecoder.decodeObjectForKey("avatar_large")  as? String
+         name = aDecoder.decodeObjectForKey("name") as? String
     }
+    
+    /// 属性列表
+    let properties = ["access_token", "expires_in", "uid", "name", "avatar_large"]
+    /// 打印对象信息
+    override var description: String {
+        return "\(self.dictionaryWithValuesForKeys(properties))"
+    }
+
 }
 
